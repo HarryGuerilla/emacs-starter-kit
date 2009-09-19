@@ -4,3 +4,6 @@
 [submodule "vendor/cedet-1.0pre7"]
 	path = vendor/cedet-1.0pre7
 	url = git://github.com/emacs-pkg-mirrors/cedet.git
+[submodule "vendor/ecb-2.32"]
+	path = vendor/ecb-2.32
+	url = git://github.com/pat-maddox/ecb.git
