@@ -1,3 +1,6 @@
 [submodule "vendor/maxframe"]
 	path = vendor/maxframe
 	url = git://github.com/rmm5t/maxframe-el.git
+[submodule "vendor/cedet-1.0pre7"]
+	path = vendor/cedet-1.0pre7
+	url = git://github.com/emacs-pkg-mirrors/cedet.git
