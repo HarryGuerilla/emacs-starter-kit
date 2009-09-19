@@ -7,3 +7,6 @@
 [submodule "vendor/ecb-2.32"]
 	path = vendor/ecb-2.32
 	url = git://github.com/pat-maddox/ecb.git
+[submodule "vendor/org-6.30e"]
+	path = vendor/org-6.30e
+	url = git://repo.or.cz/org-mode.git
