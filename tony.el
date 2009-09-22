@@ -19,3 +19,7 @@
 
 ;; ENABLE EMACS SERVER
 (server-start)
+
+;; AUTOMATICALLY BYTE-COMPILE .el FILES
+(when *byte-code-cache-enabled*
+    (require 'init-byte-code-cache))
