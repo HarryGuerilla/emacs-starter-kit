@@ -117,7 +117,7 @@
 
 (eval-after-load 'mumamo
   '(eval-after-load 'zenburn
-     '(set-face-background 'mumamo-background-chunk-submode "gray22")))
+     '(set-face-background 'mumamo-background-chunk-major "#3f3f3f")))
 
 ;; make emacs use the clipboard
 (setq x-select-enable-clipboard t)
