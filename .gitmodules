@@ -10,3 +10,6 @@
 [submodule "vendor/org-6.30e"]
 	path = vendor/org-6.30e
 	url = git://repo.or.cz/org-mode.git
+[submodule "vendor/color-theme-railscasts"]
+	path = vendor/color-theme-railscasts
+	url = git://github.com/olegshaldybin/color-theme-railscasts.git
