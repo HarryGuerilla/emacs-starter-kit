@@ -1,7 +1,7 @@
 ;; DECIDE WHICH FUNCTIONALITY TO ENABLE
 (setq *macbook-support-enabled* t)
 (setq *spell-check-support-enabled* t)
-(setq *byte-code-cahce-enabled* t)
+(setq *byte-code-cache-enabled* t)
 (setq *is-a-mac* (eq system-type 'darwin))
 (setq *is-carbon-emacs* (and *is-a-mac* (eq window-system 'mac)))
 (setq *is-cocoa-emacs* (and *is-a-mac* (eq window-system 'ns)))
@@ -21,5 +21,15 @@
 (server-start)
 
 ;; AUTOMATICALLY BYTE-COMPILE .el FILES
-(when *byte-code-cache-enabled*
-    (require 'init-byte-code-cache))
+;;(when *byte-code-cache-enabled*
+;;x  (require 'init-byte-code-cache))
+
+;; AUGMENT SEARCH PATH FOR EXTERNAL PROGRAMS WHEN RUNNING OSX
+(when *is-a-mac*
+  (dolist (dir (mapcar 'expand-file-name '("/usr/local/bin" "/opt/local/bin" "/usr/bin")))
+    (setenv "PATH" (concat dir ":" (getenv "PATH")))
+    (setq exec-path (append (list dir) exec-path))))
+
+;; USE MACPORT ASPELL DICTIONARY
+(setq ispell-program-name "/opt/local/bin/aspell")
+(setenv "ASPELL_CONF" nil)
