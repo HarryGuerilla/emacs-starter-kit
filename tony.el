@@ -1,3 +1,5 @@
+(add-to-list 'load-path (concat dotfiles-dir "/vendor"))
+
 ;; DECIDE WHICH FUNCTIONALITY TO ENABLE
 (setq *macbook-support-enabled* t)
 (setq *spell-check-support-enabled* t)
@@ -33,3 +35,10 @@
 ;; USE MACPORT ASPELL DICTIONARY
 (setq ispell-program-name "/opt/local/bin/aspell")
 (setenv "ASPELL_CONF" nil)
+
+;; SET COLOR THEME
+(load-file "~/.emacs.d/vendor/color-theme-railscasts/color-theme-railscasts.el")
+(require 'color-theme)
+(add-to-list 'color-themes '(color-theme-railscasts "Railscasts" "<http://railscasts.com>"))
+;;(color-theme-initialize)
+(color-theme-railscasts)
