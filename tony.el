@@ -11,6 +11,10 @@
 ;; SET COMMAND KEY TO META KEY
 (setq mac-command-modifier 'meta)
 
+;; SET OTHER USEFUL KEYS
+(global-set-key (kbd "M-z") 'undo)
+(global-set-key (kbd "M-s") 'save-buffer)
+
 ;; SET MAC SYSTEM FONTS FOR TERMINAL
 (set-terminal-coding-system 'utf-8)
 (set-keyboard-coding-system 'utf-8)
