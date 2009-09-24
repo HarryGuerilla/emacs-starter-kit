@@ -91,3 +91,7 @@
 (setq ecb-tree-indent 4)
 (setq ecb-tip-of-the-day nil)
 (setq ecb-vc-enable-support t)
+
+;; SET FRAME SIZE TO MAXIMUM
+(set-frame-width (selected-frame) 200)
+(set-frame-height (selected-frame) 100)
