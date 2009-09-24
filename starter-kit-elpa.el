@@ -36,9 +36,11 @@ just have to assume it's online."
     t))
 
 ;; On your first run, this should pull in all the base packages.
-(when (esk-online?)
-  (unless package-archive-contents (package-refresh-contents))
-  (starter-kit-elpa-install))
+;;(when (esk-online?)
+;;  (unless package-archive-contents (package-refresh-contents))
+;;  (starter-kit-elpa-install))
+
+(when (esk-online?) (ignore-errors (starter-kit-elpa-install)))
 
 ;; Workaround for an ELPA bug that people are reporting but I've been
 ;; unable to reproduce:
