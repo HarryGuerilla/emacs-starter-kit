@@ -40,5 +40,15 @@
 (load-file "~/.emacs.d/vendor/color-theme-railscasts/color-theme-railscasts.el")
 (require 'color-theme)
 (add-to-list 'color-themes '(color-theme-railscasts "Railscasts" "<http://railscasts.com>"))
-;;(color-theme-initialize)
+;;(color-theme-initialize)  ;; TODO For some reason this crashed emacs
 (color-theme-railscasts)
+;; Set line highlighting to a color that does not conflict so much
+;; with the color theme
+(set-face-background 'highlight "#2f303a")
+(set-face-background 'region "#555577")
+(eval-after-load 'mumamo
+  '(eval-after-load 'railscasts
+     '(set-face-background 'mumamo-background-chunk-major "#232323")))
+(eval-after-load 'mumamo
+  '(eval-after-load 'railscasts
+     '(set-face-background 'mumamo-background-chunk-submode1 "#2f303a")))
