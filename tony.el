@@ -55,6 +55,39 @@
 
 ;; ADD CDET REQUIRED FOR ECB
 (load-file "~/.emacs.d/vendor/cedet-1.0pre7/common/cedet.el")
-(global-ede-mode 1)                      ; Enable the Project management system
-(semantic-load-enable-code-helpers)      ; Enable prototype help and smart completion 
-(global-srecode-minor-mode 1)            ; Enable template insertion menu
+(global-ede-mode 1)                      ;; Enable the Project management system
+(semantic-load-enable-code-helpers)      ;; Enable prototype help and smart completion 
+(global-srecode-minor-mode 1)            ;; Enable template insertion menu
+
+;; SET UP ECB MENU SYSTEM
+(add-to-list 'load-path (concat dotfiles-dir "/vendor/ecb-2.32"))
+(require 'ecb)
+(setq ecb-tip-of-the-day nil)
+(setq ecb-auto-activate t)
+(setq ecb-compilation-buffer-names (quote (("*Calculator*")
+                                           ("*vc*")
+                                           ("*vc-diff*")
+                                           ("*Apropos*")
+                                           ("*eshell*")
+                                           ("*Occur*")
+                                           ("*shell*" . t)
+                                           ("\\*[cC]ompilation.*\\*" . t)
+                                           ("\\*i?grep.*\\*" . t)
+                                           ("*JDEE Compile Server*")
+                                           ("*Help*") ("*Completions*")
+                                           ("*Backtrace*")
+                                           ("*Compile-log*")
+                                           ("*bsh*")
+                                           ("*Messages*")
+                                           ("*magit: " . t))))
+(setq ecb-compile-window-height 6)
+(setq ecb-compile-window-height 6)
+(setq ecb-fix-window-size (quote width))
+(setq ecb-compile-window-width (quote edit-window))
+(setq ecb-layout-name "left7")
+(setq ecb-layout-window-sizes (quote (("left7" (0.1807909604519774 . 0.5853658536585366) (0.1807909604519774 . 0.21951219512195122) (0.1807909604519774 . 0.3170731707317073)))))
+(setq ecb-primary-secondary-mouse-buttons (quote mouse-1--mouse-2))
+(setq ecb-source-path (quote ("~/sites")))
+(setq ecb-tree-indent 4)
+(setq ecb-tip-of-the-day nil)
+(setq ecb-vc-enable-support t)
