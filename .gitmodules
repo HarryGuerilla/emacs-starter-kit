@@ -13,3 +13,6 @@
 [submodule "vendor/color-theme-railscasts"]
 	path = vendor/color-theme-railscasts
 	url = git://github.com/olegshaldybin/color-theme-railscasts.git
+[submodule "vendor/color-theme"]
+	path = vendor/color-theme
+	url = git://github.com/jetspeed/emacs.git
