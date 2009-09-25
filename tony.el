@@ -12,8 +12,15 @@
 (setq mac-command-modifier 'meta)
 
 ;; SET OTHER USEFUL KEYS
-(global-set-key (kbd "M-z") 'undo)
-(global-set-key (kbd "M-s") 'save-buffer)
+(global-set-key "\M-z" 'undo)
+(global-set-key "\M-s" 'save-buffer)
+;; Reclaim "M-s" from paredit-mode
+(add-hook 'paredit-mode-hook
+ (lambda ()
+ (define-key paredit-mode-map (kbd "M-s") 'save-buffer)
+ )
+)
+(global-set-key "\M-h" 'ns-do-hide-emacs)
 
 ;; SET MAC SYSTEM FONTS FOR TERMINAL
 (set-terminal-coding-system 'utf-8)
@@ -107,3 +114,16 @@
 (global-set-key "\C-ca" 'org-agenda)
 (global-set-key "\C-cb" 'org-iswitchb)
 (setq org-hide-leading-stars t)
+
+;; TAKEN FROM My Emacs For Rails
+;; http://blog.wyeworks.com/2009/9/11/my-emacs-for-rails
+'(recentf-mode t)
+'(transient-mark-mode t)
+(setq make-backup-files nil)
+(setq font-lock-maximum-decoration t)
+(fset 'yes-or-no-p 'y-or-n-p)
+(setq require-final-newline t)
+(setq default-major-mode 'text-mode)
+(setq inhibit-startup-screen t)
+(setq initial-scratch-message nil)
+
