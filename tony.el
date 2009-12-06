@@ -71,7 +71,8 @@
 (global-srecode-minor-mode 1)            ;; Enable template insertion menu
 
 ;; SET UP ECB MENU SYSTEM
-(add-to-list 'load-path (concat dotfiles-dir "/vendor/ecb-2.32"))
+(setq Info-directory-list '("/Applications/Emacs.app/Contents/Resources/info" "/vendor/ecb-2.40/info-help"))
+(add-to-list 'load-path (concat dotfiles-dir "/vendor/ecb-2.40"))
 (require 'ecb)
 (setq ecb-tip-of-the-day nil)
 (setq ecb-auto-activate t)
@@ -92,6 +93,7 @@
                                            ("*Messages*")
                                            ("*magit: " . t))))
 (setq ecb-compile-window-height 6)
+(setq ecb-options-version "2.40")
 (setq ecb-compile-window-height 6)
 (setq ecb-fix-window-size (quote width))
 (setq ecb-compile-window-width (quote edit-window))
