@@ -135,3 +135,7 @@
       (eshell/export "PATH=/Applications/Emacs.app/Contents/MacOS:/opt/local/apache2/bin:/opt/local/bin:/opt/local/sbin:/usr/bin:/bin:/usr/sbin:/sbin:/usr/local/bin:/usr/X11/bin:/Users/tony/scripts")
    (local-set-key "\C-u" 'eshell-kill-input))
  )
+
+;; Color for terminal
+(autoload 'ansi-color-for-comint-mode-on "ansi-color" nil t)
+(add-hook 'shell-mode-hook 'ansi-color-for-comint-mode-on)
