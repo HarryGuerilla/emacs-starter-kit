@@ -129,3 +129,9 @@
 (setq inhibit-startup-screen t)
 (setq initial-scratch-message nil)
 
+;; Set Eshell Environmental Variables
+(add-hook 'eshell-mode-hook
+   '(lambda nil
+      (eshell/export "PATH=/Applications/Emacs.app/Contents/MacOS:/opt/local/apache2/bin:/opt/local/bin:/opt/local/sbin:/usr/bin:/bin:/usr/sbin:/sbin:/usr/local/bin:/usr/X11/bin:/Users/tony/scripts")
+   (local-set-key "\C-u" 'eshell-kill-input))
+ )
