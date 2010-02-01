@@ -33,7 +33,7 @@
 ;; where the ability to jump to errors in source code is desirable.
 ;;
 ;; The functions you will probably want to use are
-;; 
+;;
 ;; ruby-compilation-run
 ;; ruby-compilation-rake
 ;; ruby-compilation-this-buffer (C-x t)
@@ -47,7 +47,12 @@
 ;; Package it up with dependencies for ELPA.
 
 ;;; Code:
-
+;; fill in some missing variables for XEmacs
+(when (featurep 'xemacs)
+  ;;this variable does not exist in XEmacs
+  (defvar safe-local-variable-values ())
+  ;;find-file-hook is not defined and will otherwise not be called by XEmacs
+  (define-compatible-variable-alias 'find-file-hook 'find-file-hooks))
 (require 'ansi-color)
 (require 'pcomplete)
 (require 'compile)
@@ -100,12 +105,13 @@ exec-to-string command, but it works and seems fast"
 		     (split-string (shell-command-to-string "cap -T") "[\n]"))))
 
 ;;;###autoload
-(defun ruby-compilation-run (cmd)
+(defun ruby-compilation-run (cmd &optional ruby-options)
   "Run a ruby process dumping output to a ruby compilation buffer."
   (interactive "FRuby Comand: ")
   (let ((name (file-name-nondirectory (car (split-string cmd))))
-	(cmdlist (cons ruby-compilation-executable
-                       (split-string (expand-file-name cmd)))))
+	(cmdlist (append (list ruby-compilation-executable)
+                         ruby-options
+                         (split-string (expand-file-name cmd)))))
     (pop-to-buffer (ruby-compilation-do name cmdlist))))
 
 ;;;###autoload
@@ -225,14 +231,18 @@ exec-to-string command, but it works and seems fast"
 
 (defun ruby-compilation-insertion-filter (proc string)
   "Insert text to buffer stripping ansi color codes"
-  ;; Can we use ansi-color-apply-on-region instead?
   (with-current-buffer (process-buffer proc)
     (let ((moving (= (point) (process-mark proc))))
       (save-excursion
 	(goto-char (process-mark proc))
-	(insert (ansi-color-filter-apply string))
+	(insert (ansi-color-apply (ruby-compilation-adjust-paths string)))
 	(set-marker (process-mark proc) (point)))
       (if moving (goto-char (process-mark proc))))))
+
+(defun ruby-compilation-adjust-paths (string)
+  (replace-regexp-in-string
+   "^\\([\t ]+\\)/test" "\\1test"
+   (replace-regexp-in-string "\\[/test" "[test" string)))
 
 (defun ruby-compilation-sentinel (proc msg)
   "Notify to changes in process state"
@@ -285,6 +295,6 @@ compilation buffer."
 (dolist (executable (list "jruby" "rbx" "ruby1.9" "ruby1.8" "ruby"))
   (add-to-list 'safe-local-variable-values
                (cons 'ruby-compilation-executable executable)))
-   
+
 (provide 'ruby-compilation)
 ;;; ruby-compilation.el ends here

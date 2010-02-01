@@ -156,3 +156,10 @@
  (concat dotfiles-dir "/vendor/yasnippets-rails"
 	 "/rails-snippets/"))
 ;;(load "~/.emacs.d/vendor/yasnippets-rails/setup")
+
+
+;; RINARI
+(setq exec-path (cons "/opt/local/bin" exec-path))
+;;(add-to-list 'load-path "/home/tony/.emacs.d/vendor/rinari/rinari.el")
+(add-to-list 'load-path (concat dotfiles-dir "/vendor/rinari"))
+(require 'rinari)
