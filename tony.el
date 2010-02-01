@@ -65,10 +65,10 @@
      '(set-face-background 'mumamo-background-chunk-submode1 "#2f303a")))
 
 ;; ADD CDET REQUIRED FOR ECB
-(load-file "~/.emacs.d/vendor/cedet-1.0pre7/common/cedet.el")
-(global-ede-mode 1)                      ;; Enable the Project management system
-(semantic-load-enable-code-helpers)      ;; Enable prototype help and smart completion 
-(global-srecode-minor-mode 1)            ;; Enable template insertion menu
+;;(load-file "~/.emacs.d/vendor/cedet-1.0pre7/common/cedet.el")
+;;(global-ede-mode 1)                      ;; Enable the Project management system
+;;(semantic-load-enable-code-helpers)      ;; Enable prototype help and smart completion 
+;;(global-srecode-minor-mode 1)            ;; Enable template insertion menu
 
 ;; SET UP ECB MENU SYSTEM
 ;;(setq Info-directory-list '("/Applications/Emacs.app/Contents/Resources/info" "/vendor/ecb-2.40/info-help"))
