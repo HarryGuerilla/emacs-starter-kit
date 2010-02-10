@@ -1,3 +1,4 @@
 #name : assert_equal  ... ,  ... 
+#group : testing
 # --
 assert_equal ${expected}, ${actual}

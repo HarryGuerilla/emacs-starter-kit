@@ -1,3 +1,4 @@
-#name : validates_format_of : ... , :with => / ... /
+#name : validates_format_of : ... , :with => / ... /   
+#group : rails.models
 # --
 validates_format_of :${attr}, :with => /${regex}/

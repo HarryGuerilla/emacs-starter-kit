@@ -1,0 +1,6 @@
+#name : should "..." do ... end
+#group : testing.shoulda
+# --
+should "${test}" do
+  ${assert true}
+end

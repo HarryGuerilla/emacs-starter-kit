@@ -1,3 +1,4 @@
 #name : validates_associated : ... 
+#group : rails.models
 # --
 validates_associated :${attr}

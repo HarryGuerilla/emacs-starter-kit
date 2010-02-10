@@ -1,3 +1,4 @@
 #name : has_many : ... 
+#group : rails.models
 # --
 has_many :${class}

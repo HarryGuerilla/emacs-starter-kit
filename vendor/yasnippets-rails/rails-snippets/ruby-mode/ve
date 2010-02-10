@@ -1,3 +1,4 @@
 #name : validates_exclusion_of : ... 
+#group : rails.models
 # --
 validates_exclusion_of :${attr}

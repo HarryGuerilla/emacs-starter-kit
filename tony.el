@@ -1,5 +1,7 @@
 (add-to-list 'load-path (concat dotfiles-dir "/vendor"))
 
+(desktop-save-mode 1) ;; Saves buffers between sessions
+
 ;; DECIDE WHICH FUNCTIONALITY TO ENABLE
 (setq *macbook-support-enabled* t)
 (setq *spell-check-support-enabled* t)
