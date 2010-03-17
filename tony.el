@@ -165,3 +165,10 @@
 ;;(add-to-list 'load-path "/home/tony/.emacs.d/vendor/rinari/rinari.el")
 (add-to-list 'load-path (concat dotfiles-dir "/vendor/rinari"))
 (require 'rinari)
+
+
+;; ANDROID MODE
+(add-to-list 'load-path "~/.emacs.d/vendor")
+(require 'android-mode)
+(setq android-mode-sdk-dir "/Developer/android-sdk-mac_86")
+
