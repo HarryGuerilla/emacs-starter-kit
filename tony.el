@@ -172,4 +172,4 @@
 (require 'android)
 (require 'android-mode)
 (setq android-mode-sdk-dir "/Developer/android-sdk-mac_86")
-
+(setq android-mode-avd "Default")
