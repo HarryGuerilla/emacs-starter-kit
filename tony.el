@@ -41,7 +41,7 @@
 
 ;; AUGMENT SEARCH PATH FOR EXTERNAL PROGRAMS WHEN RUNNING OSX
 (when *is-a-mac*
-  (dolist (dir (mapcar 'expand-file-name '("/usr/local/bin" "/opt/local/bin" "/usr/bin")))
+  (dolist (dir (mapcar 'expand-file-name '("/usr/local/bin" "/opt/local/bin" "/usr/bin" "/Developer/android-sdk-mac_86/tools")))
     (setenv "PATH" (concat dir ":" (getenv "PATH")))
     (setq exec-path (append (list dir) exec-path))))
 
@@ -170,6 +170,7 @@
 ;; ANDROID MODE
 (add-to-list 'load-path "~/.emacs.d/vendor")
 (require 'android)
-(require 'android-mode)
+;;(require 'android-mode)
 (setq android-mode-sdk-dir "/Developer/android-sdk-mac_86")
-(setq android-mode-avd "Default")
+(setq android-project-root "/Developer/android-sdk-mac_86")
+;;(setq android-mode-avd "Default")
