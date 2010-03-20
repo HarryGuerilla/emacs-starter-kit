@@ -170,7 +170,7 @@
 ;; ANDROID MODE
 (add-to-list 'load-path "~/.emacs.d/vendor")
 (require 'android)
-;;(require 'android-mode)
+(require 'android-mode)
 (setq android-mode-sdk-dir "/Developer/android-sdk-mac_86")
-(setq android-project-root "/Developer/android-sdk-mac_86")
-;;(setq android-mode-avd "Default")
+;;(setq android-project-root "/Developer/android-sdk-mac_86")
+(setq android-mode-avd "Default")
