@@ -37,7 +37,7 @@
 
 ;; AUTOMATICALLY BYTE-COMPILE .el FILES
 ;;(when *byte-code-cache-enabled*
-;;x  (require 'init-byte-code-cache))
+;;  (require 'init-byte-code-cache))
 
 ;; AUGMENT SEARCH PATH FOR EXTERNAL PROGRAMS WHEN RUNNING OSX
 (when *is-a-mac*
@@ -67,10 +67,11 @@
      '(set-face-background 'mumamo-background-chunk-submode1 "#2f303a")))
 
 ;; ADD CDET REQUIRED FOR ECB
-;;(load-file "~/.emacs.d/vendor/cedet-1.0pre7/common/cedet.el")
-;;(global-ede-mode 1)                      ;; Enable the Project management system
-;;(semantic-load-enable-code-helpers)      ;; Enable prototype help and smart completion 
-;;(global-srecode-minor-mode 1)            ;; Enable template insertion menu
+(add-to-list 'load-path (expand-file-name "/Users/tony/.emacs.d/vendor/cedet-1.0pre7/common"))
+(load-file "~/.emacs.d/vendor/cedet-1.0pre7/common/cedet.el")
+(global-ede-mode 1)                      ;; Enable the Project management system
+(semantic-load-enable-code-helpers)      ;; Enable prototype help and smart completion 
+(global-srecode-minor-mode 1)            ;; Enable template insertion menu
 
 ;; SET UP ECB MENU SYSTEM
 ;;(setq Info-directory-list '("/Applications/Emacs.app/Contents/Resources/info" "/vendor/ecb-2.40/info-help"))
@@ -174,3 +175,25 @@
 (setq android-mode-sdk-dir "/Developer/android-sdk-mac_86")
 ;;(setq android-project-root "/Developer/android-sdk-mac_86")
 (setq android-mode-avd "Default")
+
+
+;; JDEE
+(add-to-list 'load-path (expand-file-name "~/.emacs.d/vendor/jdee-2.4.0.1/lisp"))
+(add-to-list 'load-path (expand-file-name "~/.emacs.d/vendor/elib"))
+
+;; Defer loading the JDE until you open a Java file
+(setq defer-loading-jde t)
+
+(if defer-loading-jde
+    (progn
+      (autoload 'jde-mode "jde" "JDE mode." t)
+      (setq auto-mode-alist
+            (append
+             '(("\\.java\\'" . jde-mode))
+             auto-mode-alist)))
+  (require 'jde))
+
+;; Sets the basic indentation for Java source files to two spaces
+(defun my-jde-mode-hook ()
+  (setq c-basic-offset 2))
+(add-hook 'jde-mode-hook 'my-jde-mode-hook)
