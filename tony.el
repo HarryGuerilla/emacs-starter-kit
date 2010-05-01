@@ -162,11 +162,14 @@
 
 
 ;; RINARI
-(setq exec-path (cons "/opt/local/bin" exec-path))
+;;(setq exec-path (cons "/opt/local/bin" exec-path))
 ;;(add-to-list 'load-path "/home/tony/.emacs.d/vendor/rinari/rinari.el")
-(add-to-list 'load-path (concat dotfiles-dir "/vendor/rinari"))
-(require 'rinari)
+;;(add-to-list 'load-path (concat dotfiles-dir "/vendor/rinari"))
+;;(require 'rinari)
 
+;; emacs-rails
+(setq load-path (cons (expand-file-name "~/.emacs.d/vendor/emacs-rails") load-path))
+(require 'rails-autoload)
 
 ;; ANDROID MODE
 (add-to-list 'load-path "~/.emacs.d/vendor")
