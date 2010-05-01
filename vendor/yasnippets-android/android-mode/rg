@@ -1,0 +1,10 @@
+#name : <RadioGroup>
+#group : Android.Layout
+# --
+<RadioGroup android:id="@+id/$1"
+android:orientation="horizontal"
+android:layout_width="wrap_content"
+android:layout_height="wrap_content"
+android:padding="5px">
+$0
+</RadioGroup>
