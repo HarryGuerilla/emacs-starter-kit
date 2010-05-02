@@ -13,17 +13,6 @@
 ;; SET COMMAND KEY TO META KEY
 (setq mac-command-modifier 'meta)
 
-;; SET OTHER USEFUL KEYS
-(global-set-key "\M-z" 'undo)
-(global-set-key "\M-s" 'save-buffer)
-;; Reclaim "M-s" from paredit-mode
-(add-hook 'paredit-mode-hook
- (lambda ()
- (define-key paredit-mode-map (kbd "M-s") 'save-buffer)
- )
-)
-(global-set-key "\M-h" 'ns-do-hide-emacs)
-
 ;; SET MAC SYSTEM FONTS FOR TERMINAL
 (set-terminal-coding-system 'utf-8)
 (set-keyboard-coding-system 'utf-8)
@@ -67,11 +56,11 @@
      '(set-face-background 'mumamo-background-chunk-submode1 "#2f303a")))
 
 ;; ADD CDET REQUIRED FOR ECB
-(add-to-list 'load-path (expand-file-name "/Users/tony/.emacs.d/vendor/cedet-1.0pre7/common"))
-(load-file "~/.emacs.d/vendor/cedet-1.0pre7/common/cedet.el")
-(global-ede-mode 1)                      ;; Enable the Project management system
-(semantic-load-enable-code-helpers)      ;; Enable prototype help and smart completion 
-(global-srecode-minor-mode 1)            ;; Enable template insertion menu
+;;(add-to-list 'load-path (expand-file-name "/Users/tony/.emacs.d/vendor/cedet-1.0pre7/common"))
+;;(load-file "~/.emacs.d/vendor/cedet-1.0pre7/common/cedet.el")
+;;(global-ede-mode 1)                      ;; Enable the Project management system
+;;(semantic-load-enable-code-helpers)      ;; Enable prototype help and smart completion 
+;;(global-srecode-minor-mode 1)            ;; Enable template insertion menu
 
 ;; SET UP ECB MENU SYSTEM
 ;;(setq Info-directory-list '("/Applications/Emacs.app/Contents/Resources/info" "/vendor/ecb-2.40/info-help"))
@@ -151,14 +140,13 @@
  "Command to kill a compilation launched by `mode-compile'" t)
 (global-set-key "\C-ck" 'mode-compile-kill)
 
-
 ;; yasnippet-rails
 (require 'yasnippet)
 (yas/initialize)
 (yas/load-directory
  (concat dotfiles-dir "/vendor/yasnippets-rails"
 	 "/rails-snippets/"))
-;;(load "~/.emacs.d/vendor/yasnippets-rails/setup")
+;;;;(load "~/.emacs.d/vendor/yasnippets-rails/setup")
 
 
 ;; RINARI
@@ -181,22 +169,34 @@
 
 
 ;; JDEE
-(add-to-list 'load-path (expand-file-name "~/.emacs.d/vendor/jdee-2.4.0.1/lisp"))
-(add-to-list 'load-path (expand-file-name "~/.emacs.d/vendor/elib"))
+;;(add-to-list 'load-path (expand-file-name "~/.emacs.d/vendor/jdee-2.4.0.1/lisp"))
+;;(add-to-list 'load-path (expand-file-name "~/.emacs.d/vendor/elib"))
 
 ;; Defer loading the JDE until you open a Java file
-(setq defer-loading-jde t)
+;; (setq defer-loading-jde t)
 
-(if defer-loading-jde
-    (progn
-      (autoload 'jde-mode "jde" "JDE mode." t)
-      (setq auto-mode-alist
-            (append
-             '(("\\.java\\'" . jde-mode))
-             auto-mode-alist)))
-  (require 'jde))
+;; (if defer-loading-jde
+;;     (progn
+;;       (autoload 'jde-mode "jde" "JDE mode." t)
+;;       (setq auto-mode-alist
+;;             (append
+;;              '(("\\.java\\'" . jde-mode))
+;;              auto-mode-alist)))
+;;   (require 'jde))
 
-;; Sets the basic indentation for Java source files to two spaces
-(defun my-jde-mode-hook ()
-  (setq c-basic-offset 2))
-(add-hook 'jde-mode-hook 'my-jde-mode-hook)
+;; ;; Sets the basic indentation for Java source files to two spaces
+;; (defun my-jde-mode-hook ()
+;;   (setq c-basic-offset 2))
+;; (add-hook 'jde-mode-hook 'my-jde-mode-hook)
+
+
+;; SET OTHER USEFUL KEYS
+(global-set-key "\M-z" 'undo)
+(global-set-key "\M-s" 'save-buffer)
+;; Reclaim "M-s" from paredit-mode
+(add-hook 'paredit-mode-hook
+ (lambda ()
+ (define-key paredit-mode-map (kbd "M-s") 'save-buffer)
+ )
+)
+(global-set-key "\M-h" 'ns-do-hide-emacs)
