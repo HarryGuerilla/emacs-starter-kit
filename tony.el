@@ -18,6 +18,24 @@
 (set-keyboard-coding-system 'utf-8)
 (prefer-coding-system 'utf-8)
 
+
+;; SET OTHER USEFUL KEYS
+(global-set-key "\M-z" 'undo)
+(global-set-key "\M-s" 'save-buffer)
+;; Reclaim "M-s" from paredit-mode
+(add-hook 'paredit-mode-hook
+ (lambda ()
+ (define-key paredit-mode-map (kbd "M-s") 'save-buffer)
+ )
+ )
+
+(add-hook 'anything-isearch-map
+          (lambda ()
+              (define-key anything-map (kbd "M-s") 'save-buffer)))
+
+(global-set-key "\M-h" 'ns-do-hide-emacs)
+
+
 ;; ENABLE MENU-BAR FOR EMACS 23
 (menu-bar-mode)
 
@@ -189,14 +207,3 @@
 ;;   (setq c-basic-offset 2))
 ;; (add-hook 'jde-mode-hook 'my-jde-mode-hook)
 
-
-;; SET OTHER USEFUL KEYS
-(global-set-key "\M-z" 'undo)
-(global-set-key "\M-s" 'save-buffer)
-;; Reclaim "M-s" from paredit-mode
-(add-hook 'paredit-mode-hook
- (lambda ()
- (define-key paredit-mode-map (kbd "M-s") 'save-buffer)
- )
-)
-(global-set-key "\M-h" 'ns-do-hide-emacs)
