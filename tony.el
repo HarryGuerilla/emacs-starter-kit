@@ -207,3 +207,7 @@
 ;;   (setq c-basic-offset 2))
 ;; (add-hook 'jde-mode-hook 'my-jde-mode-hook)
 
+;; AUTO COMPLETE
+(require 'auto-complete-config)
+(add-to-list 'ac-dictionary-directories "~/.emacs.d/vendor/ac-dict")
+(ac-config-default)
