@@ -13,6 +13,12 @@
 ;; SET COMMAND KEY TO META KEY
 (setq mac-command-modifier 'meta)
 
+;; SET MAC SYSTEM FONTS FOR TERMINAL
+(set-terminal-coding-system 'utf-8)
+(set-keyboard-coding-system 'utf-8)
+(prefer-coding-system 'utf-8)
+
+
 ;; SET OTHER USEFUL KEYS
 (global-set-key "\M-z" 'undo)
 (global-set-key "\M-s" 'save-buffer)
@@ -21,13 +27,14 @@
  (lambda ()
  (define-key paredit-mode-map (kbd "M-s") 'save-buffer)
  )
-)
+ )
+
+(add-hook 'anything-isearch-map
+          (lambda ()
+              (define-key anything-map (kbd "M-s") 'save-buffer)))
+
 (global-set-key "\M-h" 'ns-do-hide-emacs)
 
-;; SET MAC SYSTEM FONTS FOR TERMINAL
-(set-terminal-coding-system 'utf-8)
-(set-keyboard-coding-system 'utf-8)
-(prefer-coding-system 'utf-8)
 
 ;; ENABLE MENU-BAR FOR EMACS 23
 (menu-bar-mode)
@@ -151,22 +158,24 @@
  "Command to kill a compilation launched by `mode-compile'" t)
 (global-set-key "\C-ck" 'mode-compile-kill)
 
-
 ;; yasnippet-rails
 (require 'yasnippet)
 (yas/initialize)
 (yas/load-directory
  (concat dotfiles-dir "/vendor/yasnippets-rails"
 	 "/rails-snippets/"))
-;;(load "~/.emacs.d/vendor/yasnippets-rails/setup")
+;;;;(load "~/.emacs.d/vendor/yasnippets-rails/setup")
 
 
 ;; RINARI
-(setq exec-path (cons "/opt/local/bin" exec-path))
+;;(setq exec-path (cons "/opt/local/bin" exec-path))
 ;;(add-to-list 'load-path "/home/tony/.emacs.d/vendor/rinari/rinari.el")
-(add-to-list 'load-path (concat dotfiles-dir "/vendor/rinari"))
-(require 'rinari)
+;;(add-to-list 'load-path (concat dotfiles-dir "/vendor/rinari"))
+;;(require 'rinari)
 
+;; emacs-rails
+(setq load-path (cons (expand-file-name "~/.emacs.d/vendor/emacs-rails") load-path))
+(require 'rails-autoload)
 
 ;; ANDROID MODE
 (add-to-list 'load-path "~/.emacs.d/vendor")
@@ -178,22 +187,27 @@
 
 
 ;; JDEE
-(add-to-list 'load-path (expand-file-name "~/.emacs.d/vendor/jdee-2.4.0.1/lisp"))
-(add-to-list 'load-path (expand-file-name "~/.emacs.d/vendor/elib"))
+;;(add-to-list 'load-path (expand-file-name "~/.emacs.d/vendor/jdee-2.4.0.1/lisp"))
+;;(add-to-list 'load-path (expand-file-name "~/.emacs.d/vendor/elib"))
 
 ;; Defer loading the JDE until you open a Java file
-(setq defer-loading-jde t)
+;; (setq defer-loading-jde t)
 
-(if defer-loading-jde
-    (progn
-      (autoload 'jde-mode "jde" "JDE mode." t)
-      (setq auto-mode-alist
-            (append
-             '(("\\.java\\'" . jde-mode))
-             auto-mode-alist)))
-  (require 'jde))
+;; (if defer-loading-jde
+;;     (progn
+;;       (autoload 'jde-mode "jde" "JDE mode." t)
+;;       (setq auto-mode-alist
+;;             (append
+;;              '(("\\.java\\'" . jde-mode))
+;;              auto-mode-alist)))
+;;   (require 'jde))
 
-;; Sets the basic indentation for Java source files to two spaces
-(defun my-jde-mode-hook ()
-  (setq c-basic-offset 2))
-(add-hook 'jde-mode-hook 'my-jde-mode-hook)
+;; ;; Sets the basic indentation for Java source files to two spaces
+;; (defun my-jde-mode-hook ()
+;;   (setq c-basic-offset 2))
+;; (add-hook 'jde-mode-hook 'my-jde-mode-hook)
+
+;; AUTO COMPLETE
+(require 'auto-complete-config)
+(add-to-list 'ac-dictionary-directories "~/.emacs.d/vendor/ac-dict")
+(ac-config-default)
