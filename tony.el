@@ -3,21 +3,23 @@
 (desktop-save-mode 1) ;; Saves buffers between sessions
 
 ;; DECIDE WHICH FUNCTIONALITY TO ENABLE
-(setq *macbook-support-enabled* t)
+;;(setq *macbook-support-enabled* t)
 (setq *spell-check-support-enabled* t)
 (setq *byte-code-cache-enabled* t)
-(setq *is-a-mac* (eq system-type 'darwin))
-(setq *is-carbon-emacs* (and *is-a-mac* (eq window-system 'mac)))
-(setq *is-cocoa-emacs* (and *is-a-mac* (eq window-system 'ns)))
+;;(setq *is-a-mac* (eq system-type 'darwin))
+;;(setq *is-carbon-emacs* (and *is-a-mac* (eq window-system 'mac)))
+;;(setq *is-cocoa-emacs* (and *is-a-mac* (eq window-system 'ns)))
 
 ;; SET COMMAND KEY TO META KEY
-(setq mac-command-modifier 'meta)
+;;(setq mac-command-modifier 'meta)
 
 ;; SET MAC SYSTEM FONTS FOR TERMINAL
 (set-terminal-coding-system 'utf-8)
 (set-keyboard-coding-system 'utf-8)
 (prefer-coding-system 'utf-8)
 
+;;SET DEFAULT FONTS
+;;(set-default-font "Inconsolata-11")
 
 ;; SET OTHER USEFUL KEYS
 (global-set-key "\M-z" 'undo)
@@ -40,21 +42,21 @@
 (menu-bar-mode)
 
 ;; ENABLE EMACS SERVER
-(server-start)
+;;(server-start)
 
 ;; AUTOMATICALLY BYTE-COMPILE .el FILES
 ;;(when *byte-code-cache-enabled*
 ;;  (require 'init-byte-code-cache))
 
 ;; AUGMENT SEARCH PATH FOR EXTERNAL PROGRAMS WHEN RUNNING OSX
-(when *is-a-mac*
-  (dolist (dir (mapcar 'expand-file-name '("/usr/local/bin" "/opt/local/bin" "/usr/bin" "/Developer/android-sdk-mac_86/tools")))
-    (setenv "PATH" (concat dir ":" (getenv "PATH")))
-    (setq exec-path (append (list dir) exec-path))))
+;;(when *is-a-mac*
+;;  (dolist (dir (mapcar 'expand-file-name '("/usr/local/bin" "/opt/local/bin" "/usr/bin" "/Developer/android-sdk-mac_86/tools")))
+;;    (setenv "PATH" (concat dir ":" (getenv "PATH")))
+;;    (setq exec-path (append (list dir) exec-path))))
 
 ;; USE MACPORT ASPELL DICTIONARY
-(setq ispell-program-name "/opt/local/bin/aspell")
-(setenv "ASPELL_CONF" nil)
+;;(setq ispell-program-name "/opt/local/bin/aspell")
+;;(setenv "ASPELL_CONF" nil)
 
 ;; SET COLOR THEME
 (load-file "~/.emacs.d/vendor/color-theme-railscasts/color-theme-railscasts.el")
@@ -116,8 +118,8 @@
 ;;(setq ecb-vc-enable-support t)
 
 ;; SET FRAME SIZE TO MAXIMUM
-(set-frame-width (selected-frame) 200)
-(set-frame-height (selected-frame) 100)
+;;(set-frame-width (selected-frame) 200)
+;;(set-frame-height (selected-frame) 100)
 
 ;; ORG MODE
 ;; The following lines are always needed.  Choose your own keys.
@@ -140,11 +142,11 @@
 (setq initial-scratch-message nil)
 
 ;; Set Eshell Environmental Variables
-(add-hook 'eshell-mode-hook
-   '(lambda nil
-      (eshell/export "PATH=/Applications/Emacs.app/Contents/MacOS:/opt/local/apache2/bin:/opt/local/bin:/opt/local/sbin:/usr/bin:/bin:/usr/sbin:/sbin:/usr/local/bin:/usr/X11/bin:/Users/tony/scripts")
-   (local-set-key "\C-u" 'eshell-kill-input))
- )
+;;(add-hook 'eshell-mode-hook
+;;   '(lambda nil
+;;      (eshell/export "PATH=/Applications/Emacs.app/Contents/MacOS:/opt/local/apache2/bin:/opt/local/bin:/opt/local/sbin:/usr/bin:/bin:/usr/sbin:/sbin:/usr/local/bin:/usr/X11/bin:/Users/tony/scripts")
+;;   (local-set-key "\C-u" 'eshell-kill-input))
+;; )
 
 ;; Color for terminal
 (autoload 'ansi-color-for-comint-mode-on "ansi-color" nil t)
