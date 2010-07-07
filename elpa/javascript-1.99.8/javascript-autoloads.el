@@ -4,11 +4,11 @@
 
 
 ;;;### (autoloads (javascript-mode) "javascript" "javascript.el"
-;;;;;;  (19298 29108))
+;;;;;;  (19502 49562))
 ;;; Generated autoloads from javascript.el
 (add-to-list 'auto-mode-alist '("\\.js\\'" . javascript-mode))
 
-(autoload 'javascript-mode "javascript" "\
+(autoload (quote javascript-mode) "javascript" "\
 Major mode for editing JavaScript source text.
 
 Key bindings:
@@ -19,15 +19,13 @@ Key bindings:
 
 ;;;***
 
-;;;### (autoloads nil nil ("javascript-pkg.el") (19298 29108 531664))
+;;;### (autoloads nil nil ("javascript-pkg.el") (19502 49562 851474))
 
 ;;;***
 
-(provide 'javascript-autoloads)
 ;; Local Variables:
 ;; version-control: never
 ;; no-byte-compile: t
 ;; no-update-autoloads: t
-;; coding: utf-8
 ;; End:
 ;;; javascript-autoloads.el ends here

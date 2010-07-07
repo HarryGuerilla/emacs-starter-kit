@@ -3,11 +3,11 @@
 ;;; Code:
 
 
-;;;### (autoloads (jtags-mode) "jtags" "jtags.el" (19298 29117))
+;;;### (autoloads (jtags-mode) "jtags" "jtags.el" (19502 49565))
 ;;; Generated autoloads from jtags.el
  (add-hook 'java-mode-hook 'jtags-mode)
 
-(autoload 'jtags-mode "jtags" "\
+(autoload (quote jtags-mode) "jtags" "\
 Toggle jtags mode.
 With arg, turn jtags mode on iff arg is positive.
 
@@ -22,15 +22,13 @@ managing tags table files.
 
 ;;;***
 
-;;;### (autoloads nil nil ("jtags-pkg.el") (19298 29117 117212))
+;;;### (autoloads nil nil ("jtags-pkg.el") (19502 49565 321411))
 
 ;;;***
 
-(provide 'jtags-autoloads)
 ;; Local Variables:
 ;; version-control: never
 ;; no-byte-compile: t
 ;; no-update-autoloads: t
-;; coding: utf-8
 ;; End:
 ;;; jtags-autoloads.el ends here

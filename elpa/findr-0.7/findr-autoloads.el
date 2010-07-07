@@ -3,16 +3,14 @@
 ;;; Code:
 
 
-;;;### (autoloads nil nil ("findr-pkg.el" "findr.el") (19298 28404
-;;;;;;  544413))
+;;;### (autoloads nil nil ("findr-pkg.el" "findr.el") (19502 49421
+;;;;;;  215103))
 
 ;;;***
 
-(provide 'findr-autoloads)
 ;; Local Variables:
 ;; version-control: never
 ;; no-byte-compile: t
 ;; no-update-autoloads: t
-;; coding: utf-8
 ;; End:
 ;;; findr-autoloads.el ends here

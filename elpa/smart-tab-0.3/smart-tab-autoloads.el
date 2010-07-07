@@ -4,10 +4,10 @@
 
 
 ;;;### (autoloads (global-smart-tab-mode smart-tab-mode smart-tab-mode-on
-;;;;;;  smart-tab) "smart-tab" "smart-tab.el" (19298 29119))
+;;;;;;  smart-tab) "smart-tab" "smart-tab.el" (19502 49759))
 ;;; Generated autoloads from smart-tab.el
 
-(autoload 'smart-tab "smart-tab" "\
+(autoload (quote smart-tab) "smart-tab" "\
 Try to 'do the smart thing' when tab is pressed.
 `smart-tab' attempts to expand the text before the point or
 indent the current line or selection.
@@ -20,12 +20,12 @@ the region or the current line (if the mark is not active).
 
 \(fn PREFIX)" t nil)
 
-(autoload 'smart-tab-mode-on "smart-tab" "\
+(autoload (quote smart-tab-mode-on) "smart-tab" "\
 Turn on `smart-tab-mode'.
 
 \(fn)" nil nil)
 
-(autoload 'smart-tab-mode "smart-tab" "\
+(autoload (quote smart-tab-mode) "smart-tab" "\
 Enable `smart-tab' to be used in place of tab.
 
 With no argument, this command toggles the mode.
@@ -41,9 +41,9 @@ Setting this variable directly does not take effect;
 either customize it (see the info node `Easy Customization')
 or call the function `global-smart-tab-mode'.")
 
-(custom-autoload 'global-smart-tab-mode "smart-tab" nil)
+(custom-autoload (quote global-smart-tab-mode) "smart-tab" nil)
 
-(autoload 'global-smart-tab-mode "smart-tab" "\
+(autoload (quote global-smart-tab-mode) "smart-tab" "\
 Toggle Smart-Tab mode in every possible buffer.
 With prefix ARG, turn Global-Smart-Tab mode on if and only if ARG is positive.
 Smart-Tab mode is enabled in all buffers where `smart-tab-mode-on' would do it.
@@ -53,15 +53,13 @@ See `smart-tab-mode' for more information on Smart-Tab mode.
 
 ;;;***
 
-;;;### (autoloads nil nil ("smart-tab-pkg.el") (19298 29119 515111))
+;;;### (autoloads nil nil ("smart-tab-pkg.el") (19502 49759 763506))
 
 ;;;***
 
-(provide 'smart-tab-autoloads)
 ;; Local Variables:
 ;; version-control: never
 ;; no-byte-compile: t
 ;; no-update-autoloads: t
-;; coding: utf-8
 ;; End:
 ;;; smart-tab-autoloads.el ends here

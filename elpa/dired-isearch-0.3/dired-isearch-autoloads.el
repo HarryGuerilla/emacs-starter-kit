@@ -5,40 +5,38 @@
 
 ;;;### (autoloads (dired-isearch-backward-regexp dired-isearch-forward-regexp
 ;;;;;;  dired-isearch-backward dired-isearch-forward) "dired-isearch"
-;;;;;;  "dired-isearch.el" (19298 29098))
+;;;;;;  "dired-isearch.el" (19502 49245))
 ;;; Generated autoloads from dired-isearch.el
 
-(autoload 'dired-isearch-forward "dired-isearch" "\
+(autoload (quote dired-isearch-forward) "dired-isearch" "\
 In Dired, run `isearch-forward' but match only at file names.
 
 \(fn &optional REGEXP-P NO-RECURSIVE-EDIT)" t nil)
 
-(autoload 'dired-isearch-backward "dired-isearch" "\
+(autoload (quote dired-isearch-backward) "dired-isearch" "\
 In Dired, run `isearch-backward' but match only at file names.
 
 \(fn &optional REGEXP-P NO-RECURSIVE-EDIT)" t nil)
 
-(autoload 'dired-isearch-forward-regexp "dired-isearch" "\
+(autoload (quote dired-isearch-forward-regexp) "dired-isearch" "\
 In Dired, run `isearch-forward-regexp' but match only at file names.
 
 \(fn &optional NOT-REGEXP NO-RECURSIVE-EDIT)" t nil)
 
-(autoload 'dired-isearch-backward-regexp "dired-isearch" "\
+(autoload (quote dired-isearch-backward-regexp) "dired-isearch" "\
 In Dired, run `isearch-backward-regexp' but match only at file names.
 
 \(fn &optional NOT-REGEXP NO-RECURSIVE-EDIT)" t nil)
 
 ;;;***
 
-;;;### (autoloads nil nil ("dired-isearch-pkg.el") (19298 29098 93364))
+;;;### (autoloads nil nil ("dired-isearch-pkg.el") (19502 49245 290642))
 
 ;;;***
 
-(provide 'dired-isearch-autoloads)
 ;; Local Variables:
 ;; version-control: never
 ;; no-byte-compile: t
 ;; no-update-autoloads: t
-;; coding: utf-8
 ;; End:
 ;;; dired-isearch-autoloads.el ends here

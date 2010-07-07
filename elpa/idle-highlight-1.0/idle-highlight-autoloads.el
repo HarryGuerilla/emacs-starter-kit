@@ -4,26 +4,24 @@
 
 
 ;;;### (autoloads (idle-highlight) "idle-highlight" "idle-highlight.el"
-;;;;;;  (19128 18296))
+;;;;;;  (19502 49157))
 ;;; Generated autoloads from idle-highlight.el
 
-(autoload 'idle-highlight "idle-highlight" "\
+(autoload (quote idle-highlight) "idle-highlight" "\
 Toggle idle-highlighting.
 
 \(fn &optional ARG)" t nil)
 
 ;;;***
 
-;;;### (autoloads nil nil ("idle-highlight-pkg.el") (19128 18296
-;;;;;;  168788))
+;;;### (autoloads nil nil ("idle-highlight-pkg.el") (19502 49157
+;;;;;;  668514))
 
 ;;;***
 
-(provide 'idle-highlight-autoloads)
 ;; Local Variables:
 ;; version-control: never
 ;; no-byte-compile: t
 ;; no-update-autoloads: t
-;; coding: utf-8
 ;; End:
 ;;; idle-highlight-autoloads.el ends here

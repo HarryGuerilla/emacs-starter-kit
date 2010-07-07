@@ -3,10 +3,10 @@
 ;;; Code:
 
 
-;;;### (autoloads (columnify) "columnify" "columnify.el" (19298 29094))
+;;;### (autoloads (columnify) "columnify" "columnify.el" (19502 49229))
 ;;; Generated autoloads from columnify.el
 
-(autoload 'columnify "columnify" "\
+(autoload (quote columnify) "columnify" "\
 Reformat the lines in the current region into a columnar list.
 
 Choose the number of columns based on the width of the longest
@@ -26,15 +26,13 @@ even multiple of the width of a space.
 
 ;;;***
 
-;;;### (autoloads nil nil ("columnify-pkg.el") (19298 29094 872324))
+;;;### (autoloads nil nil ("columnify-pkg.el") (19502 49229 997676))
 
 ;;;***
 
-(provide 'columnify-autoloads)
 ;; Local Variables:
 ;; version-control: never
 ;; no-byte-compile: t
 ;; no-update-autoloads: t
-;; coding: utf-8
 ;; End:
 ;;; columnify-autoloads.el ends here

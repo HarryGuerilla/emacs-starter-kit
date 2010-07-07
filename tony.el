@@ -116,8 +116,9 @@
 ;;(setq ecb-vc-enable-support t)
 
 ;; SET FRAME SIZE TO MAXIMUM
-(set-frame-width (selected-frame) 200)
-(set-frame-height (selected-frame) 100)
+;;(set-frame-width (selected-frame) 200)
+;;(set-frame-height (selected-frame) 100)
+(set-frame-parameter nil 'fullscreen 'fullboth)
 
 ;; ORG MODE
 ;; The following lines are always needed.  Choose your own keys.
@@ -208,6 +209,13 @@
 ;; (add-hook 'jde-mode-hook 'my-jde-mode-hook)
 
 ;; AUTO COMPLETE
+(add-to-list 'load-path "~/.emacs.d/vendor")
 (require 'auto-complete-config)
 (add-to-list 'ac-dictionary-directories "~/.emacs.d/vendor/ac-dict")
 (ac-config-default)
+
+;; TWITTER
+(autoload 'twitter-get-friends-timeline "twitter" nil t)
+(autoload 'twitter-status-edit "twitter" nil t)
+(global-set-key "\C-xt" 'twitter-get-friends-timeline)
+(add-hook 'twitter-status-edit-mode-hook 'longlines-mode)

@@ -3,10 +3,10 @@
 ;;; Code:
 
 
-;;;### (autoloads (caps-mode) "caps-mode" "caps-mode.el" (19298 29094))
+;;;### (autoloads (caps-mode) "caps-mode" "caps-mode.el" (19502 49229))
 ;;; Generated autoloads from caps-mode.el
 
-(autoload 'caps-mode "caps-mode" "\
+(autoload (quote caps-mode) "caps-mode" "\
 Toggle caps mode.
 With no argument, this command toggles the mode.
 Non-null prefix argument turns on the mode.
@@ -19,15 +19,13 @@ capitalized form.
 
 ;;;***
 
-;;;### (autoloads nil nil ("caps-mode-pkg.el") (19298 29094 157837))
+;;;### (autoloads nil nil ("caps-mode-pkg.el") (19502 49229 450101))
 
 ;;;***
 
-(provide 'caps-mode-autoloads)
 ;; Local Variables:
 ;; version-control: never
 ;; no-byte-compile: t
 ;; no-update-autoloads: t
-;; coding: utf-8
 ;; End:
 ;;; caps-mode-autoloads.el ends here

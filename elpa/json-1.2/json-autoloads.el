@@ -3,16 +3,14 @@
 ;;; Code:
 
 
-;;;### (autoloads nil nil ("json-pkg.el" "json.el") (19298 29116
-;;;;;;  89556))
+;;;### (autoloads nil nil ("json-pkg.el" "json.el") (19502 49418
+;;;;;;  524970))
 
 ;;;***
 
-(provide 'json-autoloads)
 ;; Local Variables:
 ;; version-control: never
 ;; no-byte-compile: t
 ;; no-update-autoloads: t
-;; coding: utf-8
 ;; End:
 ;;; json-autoloads.el ends here

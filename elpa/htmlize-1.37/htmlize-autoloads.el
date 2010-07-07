@@ -4,11 +4,11 @@
 
 
 ;;;### (autoloads (htmlize-many-files-dired htmlize-many-files htmlize-file
-;;;;;;  htmlize-region htmlize-buffer) "htmlize" "htmlize.el" (19298
-;;;;;;  29105))
+;;;;;;  htmlize-region htmlize-buffer) "htmlize" "htmlize.el" (19502
+;;;;;;  49492))
 ;;; Generated autoloads from htmlize.el
 
-(autoload 'htmlize-buffer "htmlize" "\
+(autoload (quote htmlize-buffer) "htmlize" "\
 Convert BUFFER to HTML, preserving colors and decorations.
 
 The generated HTML is available in a new buffer, which is returned.
@@ -24,13 +24,13 @@ that created them, or simply alter the faces it uses.
 
 \(fn &optional BUFFER)" t nil)
 
-(autoload 'htmlize-region "htmlize" "\
+(autoload (quote htmlize-region) "htmlize" "\
 Convert the region to HTML, preserving colors and decorations.
 See `htmlize-buffer' for details.
 
 \(fn BEG END)" t nil)
 
-(autoload 'htmlize-file "htmlize" "\
+(autoload (quote htmlize-file) "htmlize" "\
 Load FILE, fontify it, convert it to HTML, and save the result.
 
 Contents of FILE are inserted into a temporary buffer, whose major mode
@@ -49,7 +49,7 @@ does not name a directory, it will be used as output file name.
 
 \(fn FILE &optional TARGET)" t nil)
 
-(autoload 'htmlize-many-files "htmlize" "\
+(autoload (quote htmlize-many-files) "htmlize" "\
 Convert FILES to HTML and save the corresponding HTML versions.
 
 FILES should be a list of file names to convert.  This function calls
@@ -63,22 +63,20 @@ corresponding source file.
 
 \(fn FILES &optional TARGET-DIRECTORY)" t nil)
 
-(autoload 'htmlize-many-files-dired "htmlize" "\
+(autoload (quote htmlize-many-files-dired) "htmlize" "\
 HTMLize dired-marked files.
 
 \(fn ARG &optional TARGET-DIRECTORY)" t nil)
 
 ;;;***
 
-;;;### (autoloads nil nil ("htmlize-pkg.el") (19298 29106 2962))
+;;;### (autoloads nil nil ("htmlize-pkg.el") (19502 49492 166542))
 
 ;;;***
 
-(provide 'htmlize-autoloads)
 ;; Local Variables:
 ;; version-control: never
 ;; no-byte-compile: t
 ;; no-update-autoloads: t
-;; coding: utf-8
 ;; End:
 ;;; htmlize-autoloads.el ends here

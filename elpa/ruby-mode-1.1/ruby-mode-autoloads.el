@@ -3,10 +3,10 @@
 ;;; Code:
 
 
-;;;### (autoloads (ruby-mode) "ruby-mode" "ruby-mode.el" (19302 33908))
+;;;### (autoloads (ruby-mode) "ruby-mode" "ruby-mode.el" (19502 48749))
 ;;; Generated autoloads from ruby-mode.el
 
-(autoload 'ruby-mode "ruby-mode" "\
+(autoload (quote ruby-mode) "ruby-mode" "\
 Major mode for editing Ruby scripts.
 \\[ruby-indent-line] properly indents subexpressions of multi-line
 class, module, def, if, while, for, do, and case statements, taking
@@ -17,29 +17,27 @@ The variable ruby-indent-level controls the amount of indentation.
 
 \(fn)" t nil)
 
-(add-to-list 'auto-mode-alist '("\\.rb$" . ruby-mode))
+(add-to-list (quote auto-mode-alist) (quote ("\\.rb$" . ruby-mode)))
 
-(add-to-list 'interpreter-mode-alist '("ruby" . ruby-mode))
+(add-to-list (quote interpreter-mode-alist) (quote ("ruby" . ruby-mode)))
 
-(add-to-list 'interpreter-mode-alist '("rbx" . ruby-mode))
+(add-to-list (quote interpreter-mode-alist) (quote ("rbx" . ruby-mode)))
 
-(add-to-list 'interpreter-mode-alist '("jruby" . ruby-mode))
+(add-to-list (quote interpreter-mode-alist) (quote ("jruby" . ruby-mode)))
 
-(add-to-list 'interpreter-mode-alist '("ruby1.9" . ruby-mode))
+(add-to-list (quote interpreter-mode-alist) (quote ("ruby1.9" . ruby-mode)))
 
-(add-to-list 'interpreter-mode-alist '("ruby1.8" . ruby-mode))
-
-;;;***
-
-;;;### (autoloads nil nil ("ruby-mode-pkg.el") (19302 33908 100684))
+(add-to-list (quote interpreter-mode-alist) (quote ("ruby1.8" . ruby-mode)))
 
 ;;;***
 
-(provide 'ruby-mode-autoloads)
+;;;### (autoloads nil nil ("ruby-mode-pkg.el") (19502 48749 313934))
+
+;;;***
+
 ;; Local Variables:
 ;; version-control: never
 ;; no-byte-compile: t
 ;; no-update-autoloads: t
-;; coding: utf-8
 ;; End:
 ;;; ruby-mode-autoloads.el ends here

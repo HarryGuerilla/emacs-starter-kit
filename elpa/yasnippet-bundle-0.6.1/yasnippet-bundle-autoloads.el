@@ -4,7 +4,7 @@
 
 
 ;;;### (autoloads (yas/minor-mode yas/root-directory) "yasnippet-bundle"
-;;;;;;  "yasnippet-bundle.el" (19298 29122))
+;;;;;;  "yasnippet-bundle.el" (19507 61603))
 ;;; Generated autoloads from yasnippet-bundle.el
 
 (defvar yas/root-directory nil "\
@@ -16,9 +16,9 @@ element is always the user-created snippets directory. Other
 directories are used for bulk reloading of all snippets using
 `yas/reload-all'")
 
-(custom-autoload 'yas/root-directory "yasnippet-bundle" nil)
+(custom-autoload (quote yas/root-directory) "yasnippet-bundle" nil)
 
-(autoload 'yas/minor-mode "yasnippet-bundle" "\
+(autoload (quote yas/minor-mode) "yasnippet-bundle" "\
 Toggle YASnippet mode.
 
 When YASnippet mode is enabled, the `tas/trigger-key' key expands
@@ -38,16 +38,14 @@ Key bindings:
 
 ;;;***
 
-;;;### (autoloads nil nil ("yasnippet-bundle-pkg.el") (19298 29122
-;;;;;;  548018))
+;;;### (autoloads nil nil ("yasnippet-bundle-pkg.el") (19507 61603
+;;;;;;  544797))
 
 ;;;***
 
-(provide 'yasnippet-bundle-autoloads)
 ;; Local Variables:
 ;; version-control: never
 ;; no-byte-compile: t
 ;; no-update-autoloads: t
-;; coding: utf-8
 ;; End:
 ;;; yasnippet-bundle-autoloads.el ends here

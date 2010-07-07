@@ -4,15 +4,15 @@
 
 
 ;;;### (autoloads (run-ruby inf-ruby inf-ruby-keys) "inf-ruby" "inf-ruby.el"
-;;;;;;  (19302 33909))
+;;;;;;  (19502 48750))
 ;;; Generated autoloads from inf-ruby.el
 
-(autoload 'inf-ruby-keys "inf-ruby" "\
+(autoload (quote inf-ruby-keys) "inf-ruby" "\
 Set local key defs to invoke inf-ruby from ruby-mode.
 
 \(fn)" nil nil)
 
-(autoload 'inf-ruby "inf-ruby" "\
+(autoload (quote inf-ruby) "inf-ruby" "\
 Run an inferior Ruby process in a buffer.
 With prefix argument, prompts for which Ruby implementation
 \(from the list `inf-ruby-implementations') to use. Runs the
@@ -21,7 +21,7 @@ run).
 
 \(fn &optional IMPL)" t nil)
 
-(autoload 'run-ruby "inf-ruby" "\
+(autoload (quote run-ruby) "inf-ruby" "\
 Run an inferior Ruby process, input and output via buffer *ruby*.
 If there is a process already running in `*ruby*', switch to that buffer.
 With argument, allows you to edit the command line (default is value
@@ -31,19 +31,17 @@ of `ruby-program-name').  Runs the hooks `inferior-ruby-mode-hook'
 
 \(fn &optional COMMAND NAME)" t nil)
 
-(eval-after-load 'ruby-mode '(add-hook 'ruby-mode-hook 'inf-ruby-keys))
+(eval-after-load (quote ruby-mode) (quote (add-hook (quote ruby-mode-hook) (quote inf-ruby-keys))))
 
 ;;;***
 
-;;;### (autoloads nil nil ("inf-ruby-pkg.el") (19302 33909 572228))
+;;;### (autoloads nil nil ("inf-ruby-pkg.el") (19502 48750 674925))
 
 ;;;***
 
-(provide 'inf-ruby-autoloads)
 ;; Local Variables:
 ;; version-control: never
 ;; no-byte-compile: t
 ;; no-update-autoloads: t
-;; coding: utf-8
 ;; End:
 ;;; inf-ruby-autoloads.el ends here

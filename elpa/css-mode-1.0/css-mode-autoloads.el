@@ -3,11 +3,11 @@
 ;;; Code:
 
 
-;;;### (autoloads (css-mode) "css-mode" "css-mode.el" (19298 29097))
+;;;### (autoloads (css-mode) "css-mode" "css-mode.el" (19502 49239))
 ;;; Generated autoloads from css-mode.el
 (add-to-list 'auto-mode-alist '("\\.css\\'" . css-mode))
 
-(autoload 'css-mode "css-mode" "\
+(autoload (quote css-mode) "css-mode" "\
 Major mode for editing CSS source code.
 
 Key bindings:
@@ -18,15 +18,13 @@ Key bindings:
 
 ;;;***
 
-;;;### (autoloads nil nil ("css-mode-pkg.el") (19298 29097 295851))
+;;;### (autoloads nil nil ("css-mode-pkg.el") (19502 49239 894314))
 
 ;;;***
 
-(provide 'css-mode-autoloads)
 ;; Local Variables:
 ;; version-control: never
 ;; no-byte-compile: t
 ;; no-update-autoloads: t
-;; coding: utf-8
 ;; End:
 ;;; css-mode-autoloads.el ends here

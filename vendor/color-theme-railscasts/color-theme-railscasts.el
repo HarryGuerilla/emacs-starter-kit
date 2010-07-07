@@ -23,6 +23,9 @@
      (bold ((t (:bold t))))
      (bold-italic ((t (:italic t :bold t))))
      (fringe ((t (:background "#232323"))))
+     (twitter-user-name-face ((t (:bold t :foreground "white"  :background "blue"))))
+     (twitter-time-stamp-face ((t (:bold nil :foreground "white" :background "blue"))))
+     (twitter-header-face ((t (:bold nil :foreground "white" :background "blue"))))
      (font-lock-builtin-face ((t (:foreground "#D0D0FF"))))
      (font-lock-comment-face ((t (:foreground "#BC9458" :italic t))))
      (font-lock-constant-face ((t (:foreground "#6D9CBE"))))
@@ -56,5 +59,7 @@
                                         "black"))))
      (underline ((t (:underline t)))) 
      (minibuffer-prompt ((t (:bold t :foreground "#FF6600")))))))
+
+
 
 (provide 'railscasts)

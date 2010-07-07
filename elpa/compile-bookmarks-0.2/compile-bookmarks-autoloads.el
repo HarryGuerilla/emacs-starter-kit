@@ -4,7 +4,7 @@
 
 
 ;;;### (autoloads (compile-bookmarks-mode) "compile-bookmarks" "compile-bookmarks.el"
-;;;;;;  (19298 29096))
+;;;;;;  (19502 49238))
 ;;; Generated autoloads from compile-bookmarks.el
 
 (defvar compile-bookmarks-mode nil "\
@@ -14,9 +14,9 @@ Setting this variable directly does not take effect;
 either customize it (see the info node `Easy Customization')
 or call the function `compile-bookmarks-mode'.")
 
-(custom-autoload 'compile-bookmarks-mode "compile-bookmarks" nil)
+(custom-autoload (quote compile-bookmarks-mode) "compile-bookmarks" nil)
 
-(autoload 'compile-bookmarks-mode "compile-bookmarks" "\
+(autoload (quote compile-bookmarks-mode) "compile-bookmarks" "\
 Minor mode for keeping track of multiple `compile-command's.
 This mode enables a bookmark menu for the commands used by `recompile'.
 Once you have stored the last compilation with `compile-bm-add' (or the
@@ -26,16 +26,14 @@ menu), you will be able to execute that compilation from the menu.
 
 ;;;***
 
-;;;### (autoloads nil nil ("compile-bookmarks-pkg.el") (19298 29096
-;;;;;;  316435))
+;;;### (autoloads nil nil ("compile-bookmarks-pkg.el") (19502 49238
+;;;;;;  831283))
 
 ;;;***
 
-(provide 'compile-bookmarks-autoloads)
 ;; Local Variables:
 ;; version-control: never
 ;; no-byte-compile: t
 ;; no-update-autoloads: t
-;; coding: utf-8
 ;; End:
 ;;; compile-bookmarks-autoloads.el ends here

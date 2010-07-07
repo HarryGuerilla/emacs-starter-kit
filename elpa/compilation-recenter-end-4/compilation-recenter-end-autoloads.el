@@ -4,10 +4,10 @@
 
 
 ;;;### (autoloads (compilation-recenter-end-enable) "compilation-recenter-end"
-;;;;;;  "compilation-recenter-end.el" (19298 29095))
+;;;;;;  "compilation-recenter-end.el" (19502 49238))
 ;;; Generated autoloads from compilation-recenter-end.el
 
-(autoload 'compilation-recenter-end-enable "compilation-recenter-end" "\
+(autoload (quote compilation-recenter-end-enable) "compilation-recenter-end" "\
 Enable recentring of compilation windows at finish.
 This function adds `compilation-recenter-end-at-finish' to
 `compilation-finish-functions' (for Emacs 21 and up) or sets it
@@ -25,20 +25,18 @@ URL `http://user42.tuxfamily.org/compilation-recenter-end/index.html'
 
 \(fn)" nil nil)
 
-(custom-add-option 'compilation-mode-hook 'compilation-recenter-end-enable)
+(custom-add-option (quote compilation-mode-hook) (quote compilation-recenter-end-enable))
 
 ;;;***
 
-;;;### (autoloads nil nil ("compilation-recenter-end-pkg.el") (19298
-;;;;;;  29095 569260))
+;;;### (autoloads nil nil ("compilation-recenter-end-pkg.el") (19502
+;;;;;;  49238 200346))
 
 ;;;***
 
-(provide 'compilation-recenter-end-autoloads)
 ;; Local Variables:
 ;; version-control: never
 ;; no-byte-compile: t
 ;; no-update-autoloads: t
-;; coding: utf-8
 ;; End:
 ;;; compilation-recenter-end-autoloads.el ends here

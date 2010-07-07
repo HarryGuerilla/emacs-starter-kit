@@ -3,8 +3,8 @@
 ;;; Code:
 
 
-;;;### (autoloads (textmate-mode) "textmate" "textmate.el" (19298
-;;;;;;  29120))
+;;;### (autoloads (textmate-mode) "textmate" "textmate.el" (19502
+;;;;;;  49762))
 ;;; Generated autoloads from textmate.el
 
 (defvar textmate-mode nil "\
@@ -14,24 +14,22 @@ Setting this variable directly does not take effect;
 either customize it (see the info node `Easy Customization')
 or call the function `textmate-mode'.")
 
-(custom-autoload 'textmate-mode "textmate" nil)
+(custom-autoload (quote textmate-mode) "textmate" nil)
 
-(autoload 'textmate-mode "textmate" "\
+(autoload (quote textmate-mode) "textmate" "\
 TextMate Emulation Minor Mode
 
 \(fn &optional ARG)" t nil)
 
 ;;;***
 
-;;;### (autoloads nil nil ("textmate-pkg.el") (19298 29120 16330))
+;;;### (autoloads nil nil ("textmate-pkg.el") (19502 49762 836875))
 
 ;;;***
 
-(provide 'textmate-autoloads)
 ;; Local Variables:
 ;; version-control: never
 ;; no-byte-compile: t
 ;; no-update-autoloads: t
-;; coding: utf-8
 ;; End:
 ;;; textmate-autoloads.el ends here
