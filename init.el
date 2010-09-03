@@ -47,3 +47,6 @@
   "Run an inferior Ruby process" t)
 (autoload 'inf-ruby-keys "inf-ruby"
   "Set local key defs for inf-ruby in ruby-mode" t)
+
+(setq load-path (cons (expand-file-name "~/.emacs.d/vendor/rails-mode") load-path))
+(require 'rails-autoload)
