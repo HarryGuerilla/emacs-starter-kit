@@ -213,3 +213,15 @@
 (require 'auto-complete-config)
 (add-to-list 'ac-dictionary-directories "~/.emacs.d/vendor/ac-dict")
 (ac-config-default)
+
+;; MOBILE ORG
+;; http://orgmode.org/manual/Setting-up-the-staging-area.html#Setting-up-the-staging-area
+
+(setq org-directory "~/Org/")
+(setq org-mobile-directory "~/staging/")
+(add-hook 'org-mobile-post-push-hook
+  (lambda () (shell-command "get_org mput * ")))
+(add-hook 'org-mobile-pre-pull-hook
+  (lambda () (shell-command "get_org get mobileorg.org ~/staging/mobileorg.org")))
+(add-hook 'org-mobile-post-pull-hook
+  (lambda () (shell-command "get_org put mobileorg.org")))          
