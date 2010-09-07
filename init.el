@@ -76,6 +76,7 @@
 ;; ===================================================================
 ;; GENERAL CONFIGURATION
 ;; ===================================================================
+(setq load-path (cons (expand-file-name "~/.emacs.d/vendor") load-path))
 (require 'cl)
 (require 'saveplace)
 (require 'ffap)
