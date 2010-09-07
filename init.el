@@ -129,3 +129,10 @@
 ;(setq load-path (cons (expand-file-name "~/.emacs.d/vendor/rails-mode") load-path))
 ;(require 'rails-autoload)
 ;(require 'inf-ruby)
+
+
+;; ===================================================================
+;; Git
+;; ===================================================================
+
+(require 'magit)
