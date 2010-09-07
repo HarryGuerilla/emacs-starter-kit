@@ -2,18 +2,30 @@
 ;; ===========
 ;; basic emacs configuration for ruby on rails development
 
-;; CUSTOMIZED VARIABLES =================================================
+;; ===================================================================
+;; CUSTOMIZED VARIABLES
+;; ===================================================================
+
 (setq custom-file "~/.emacs.d/custom.el")
 (load custom-file)
 
-;; APPEARANCE ===========================================================
 
+;; ===================================================================
+;; APPEARANCE
+;; ===================================================================
+
+;; show line numbers in buffer
 (setq line-number-mode t)
-(global-linum-mode 1) ; show line numbers
-(display-time)        ; show clock
+(global-linum-mode 1)
 
+;; show clock in status bar
+(display-time)        
+
+;; startup screen
 (setq inhibit-startup-screen t)
-(setq inhibit-scratch-message nil)
+(setq inhibit-scratch-message t)
+
+;; menu's & scroll bars
 (scroll-bar-mode -1)
 (tool-bar-mode -1)
 
@@ -21,6 +33,9 @@
 (setq show-paren-style 'mixed)
 
 (setq column-number-mode t)
+
+;; stop cursor from blinking
+(blink-cursor-mode -1)
 
 ;; set color theme
 (add-to-list 'load-path "~/.emacs.d/vendor/color-theme-6.6.0")
@@ -40,6 +55,9 @@
      (color-theme-railscasts)))
 
 ;; Set Font attributes
+(set-terminal-coding-system 'utf-8)
+(set-keyboard-coding-system 'utf-8)
+(prefer-coding-system 'utf-8)
 (setq default-frame-alist '((font . "inconsolata-11")))
 (push '(font-backend xft x) default-frame-alist)
 (setq font-lock-maximum-decoration t)
@@ -53,7 +71,17 @@
 ;(require 'highline)
 ;(highline-mode 1) ; highlight current line
 
-;; GENERAL CONFIGURATION ================================================
+
+
+;; ===================================================================
+;; GENERAL CONFIGURATION
+;; ===================================================================
+(require 'cl)
+(require 'saveplace)
+(require 'ffap)
+(require 'uniquify)
+(require 'ansi-color)
+(require 'recentf)
 '(recentf-mode t)
 '(transient-mark-mode t)
 (setq make-backup-files nil)
@@ -66,7 +94,7 @@
 (mouse-wheel-mode t)
 (setq default-directory "~/")
 (fset 'yes-or-no-p 'y-or-n-p)
-(setq major-mode 'text-mode)
+;;(setq major-mode 'text-mode)
 (desktop-save-mode 1) ;; Saves buffers between sessions
 
 ;; SET MAC SYSTEM FONTS FOR TERMINAL
@@ -75,12 +103,21 @@
 (prefer-coding-system 'utf-8)
 
 
-;; KEYBOARD SHORTCUTS ===================================================
+
+;; ===================================================================
+;; KEYBOARD SHORTCUTS
+;; ===================================================================
+
 (global-set-key "\M-z" 'undo)
 (global-set-key "\M-s" 'save-buffer)
 (global-set-key "\C-xt" 'term)
 
-;; RUBY =================================================================
+
+
+;; ===================================================================
+;; RUBY
+;; ===================================================================
+
 (setq auto-mode-alist (cons '("\\(?:\\.irbc\\|\\.rb\\)$" . ruby-mode)
 			    auto-mode-alist))
 ;(autoload 'run-ruby "inf-ruby"
