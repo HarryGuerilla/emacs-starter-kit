@@ -26,7 +26,8 @@
 
 ;; startup screen
 (setq inhibit-startup-screen t)
-(setq inhibit-scratch-message t)
+(setq inhibit-startup-message t)
+(setq initial-scratch-message nil)
 
 ;; menu's & scroll bars
 (scroll-bar-mode -1)
