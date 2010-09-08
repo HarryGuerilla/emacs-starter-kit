@@ -41,14 +41,14 @@
 (blink-cursor-mode -1)
 
 ;; set color theme
-(add-to-list 'load-path "~/.emacs.d/vendor/color-theme-6.6.0")
-(load-file "~/.emacs.d/vendor/color-theme-6.6.0/color-theme-tangotango.el")
+(add-to-list 'load-path "~/.emacs.d/site-lisp/color-theme-6.6.0")
+(load-file "~/.emacs.d/site-lisp/color-theme-6.6.0/color-theme-tangotango.el")
 (add-to-list 'color-themes 
   '(color-theme-tangotango "Tango Tango" "http://blog.nozav.org/post/2010/07/12/Updated-tangotango-emacs-color-theme")
 )
-(load-file "~/.emacs.d/vendor/color-theme-6.6.0/color-theme-railscasts.el")
+(load-file "~/.emacs.d/site-lisp/color-theme-6.6.0/color-theme-railscasts.el")
 (add-to-list 'color-themes '(color-theme-railscasts "Railscasts" "<http://railscasts.org">))
-(load-file "~/.emacs.d/vendor/color-theme-6.6.0/color-theme-vibrant-ink.el")
+(load-file "~/.emacs.d/site-lisp/color-theme-6.6.0/color-theme-vibrant-ink.el")
 (add-to-list 'color-themes '(color-theme-vibrant-ink "Vibrant Ink" "<http://github.com/mig/color-theme-vibrant-ink"))
 
 (require 'color-theme)
@@ -79,7 +79,7 @@
 ;; ===================================================================
 ;; GENERAL CONFIGURATION
 ;; ===================================================================
-(setq load-path (cons (expand-file-name "~/.emacs.d/vendor") load-path))
+(setq load-path (cons (expand-file-name "~/.emacs.d/site-lisp") load-path))
 (require 'cl)
 (require 'saveplace)
 (require 'ffap)
@@ -129,7 +129,7 @@
 ;(autoload 'inf-ruby-keys "inf-ruby"
 ;  "Set local key defs for inf-ruby in ruby-mode" t)
 
-;(setq load-path (cons (expand-file-name "~/.emacs.d/vendor/rails-mode") load-path))
+;(setq load-path (cons (expand-file-name "~/.emacs.d/site-lisp/rails-mode") load-path))
 ;(require 'rails-autoload)
 ;(require 'inf-ruby)
 
