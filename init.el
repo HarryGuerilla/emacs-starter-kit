@@ -18,6 +18,9 @@
 (setq line-number-mode t)
 (global-linum-mode 1)
 
+;; show fringe indicator for empty lines
+(setq indicate-empty-lines 1)
+
 ;; show clock in status bar
 (display-time)        
 
