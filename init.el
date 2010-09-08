@@ -98,7 +98,7 @@
 (mouse-wheel-mode t)
 (setq default-directory "~/")
 (fset 'yes-or-no-p 'y-or-n-p)
-;;(setq major-mode 'text-mode)
+(setq major-mode 'text-mode)
 (desktop-save-mode 1) ;; Saves buffers between sessions
 
 ;; SET MAC SYSTEM FONTS FOR TERMINAL
