@@ -107,7 +107,8 @@
 (set-keyboard-coding-system 'utf-8)
 (prefer-coding-system 'utf-8)
 
-
+;; make emacs use the clipboard
+(setq x-select-enable-clipboard t)
 
 ;; ===================================================================
 ;; KEYBOARD SHORTCUTS
