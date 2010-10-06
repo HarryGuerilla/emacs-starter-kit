@@ -123,13 +123,13 @@
 ;; NAVIGATION
 ;; ===================================================================
 
-(add-to-list 'load-path "~/.emacs.d/site-lisp/icicles/")
-(require 'icicles)
-(icy-mode 1)
+;;(add-to-list 'load-path "~/.emacs.d/site-lisp/icicles/")
+;;(require 'icicles)
+;;(icy-mode 1)
 
-;;(require 'ido)
-;;(ido-mode t)
-;;(setq ido-enable-flex-matching t) ;; enable fuzzy matching
+(require 'ido)
+(ido-mode t)
+(setq ido-enable-flex-matching t) ;; enable fuzzy matching
 
 
 
