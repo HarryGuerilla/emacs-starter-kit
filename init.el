@@ -117,6 +117,7 @@
 (global-set-key "\M-z" 'undo)
 (global-set-key "\M-s" 'save-buffer)
 (global-set-key "\C-xt" 'term)
+(global-set-key "\M-g" 'magit-status)
 
 
 ;; ===================================================================
