@@ -137,13 +137,30 @@
 ;; ===================================================================
 ;; RUBY
 ;; ===================================================================
+(add-to-list 'load-path "~/.emacs.d/site-lisp/ruby-mode")
 
 (setq auto-mode-alist (cons '("\\(?:\\.irbc\\|\\.rb\\)$" . ruby-mode)
 			    auto-mode-alist))
-;(autoload 'run-ruby "inf-ruby"
-;  "Run an inferior Ruby process" t)
-;(autoload 'inf-ruby-keys "inf-ruby"
-;  "Set local key defs for inf-ruby in ruby-mode" t)
+(autoload 'run-ruby "inf-ruby"
+  "Run an inferior Ruby process" t)
+(autoload 'inf-ruby-keys "inf-ruby"
+  "Set local key defs for inf-ruby in ruby-mode" t)
+
+(add-hook 'ruby-mode-hook
+      (lambda()
+        (add-hook 'local-write-file-hooks
+                  '(lambda()
+                     (save-excursion
+                       (untabify (point-min) (point-max))
+                       (delete-trailing-whitespace)
+                       )))
+        (set (make-local-variable 'indent-tabs-mode) 'nil)
+        (set (make-local-variable 'tab-width) 2)
+        (imenu-add-to-menubar "IMENU")
+;        (define-key ruby-mode-map "\C-m" 'newline-and-indent) ;Not sure if this line is 100% right!
+        (require 'ruby-electric)
+        (ruby-electric-mode t)
+        ))
 
 ;(setq load-path (cons (expand-file-name "~/.emacs.d/site-lisp/rails-mode") load-path))
 ;(require 'rails-autoload)
