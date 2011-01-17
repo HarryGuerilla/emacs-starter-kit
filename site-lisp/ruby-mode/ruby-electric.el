@@ -29,6 +29,10 @@
 ;;
 ;; Changelog:
 ;;
+;;  2010/Sep/03: added ruby-insert-end (now ruby-electric-insert-end)
+;;  from original ruby-mode, to get  ruby-electric to work with
+;;  the ruby-mode which ships with Emacs 23
+;;
 ;;  2005/Jan/14: inserts matching pair delimiters like {, [, (, ', ",
 ;;  ' and | .
 ;;
@@ -67,8 +71,8 @@
     (?\` . ?\`)
     (?\" . ?\")))
 
-(defcustom ruby-electric-simple-keywords-re
-  (regexp-opt '("def" "if" "class" "module" "unless" "case" "while" "do" "until" "for" "begin") t)
+(defcustom ruby-electric-simple-keywords-re 
+  "\\(def\\|if\\|class\\|module\\|unless\\|case\\|while\\|do\\|until\\|for\\|begin\\)"
   "*Regular expresion matching keywords for which closing 'end'
 is to be inserted."
   :type 'regexp :group 'ruby-electric)
@@ -77,14 +81,14 @@ is to be inserted."
   "*List of contexts where matching delimiter should be
 inserted. The word 'all' will do all insertions."
   :type '(set :extra-offset 8
-              (const :tag "Everything" all )
-              (const :tag "Curly brace" ?\{ )
-              (const :tag "Square brace" ?\[ )
-              (const :tag "Round brace" ?\( )
-              (const :tag "Quote" ?\' )
-              (const :tag "Double quote" ?\" )
-              (const :tag "Back quote" ?\` )
-              (const :tag "Vertical bar" ?\| ))
+	      (const :tag "Everything" all )
+	      (const :tag "Curly brace" ?\{ )
+	      (const :tag "Square brace" ?\[ )
+	      (const :tag "Round brace" ?\( )
+	      (const :tag "Quote" ?\' )
+	      (const :tag "Double quote" ?\" )
+	      (const :tag "Back quote" ?\` )
+	      (const :tag "Vertical bar" ?\| ))
   :group 'ruby-electric) 
 
 (defcustom ruby-electric-newline-before-closing-bracket nil
@@ -121,20 +125,27 @@ strings. Note that you must have Font Lock enabled."
   (define-key ruby-mode-map "\'" 'ruby-electric-matching-char)
   (define-key ruby-mode-map "|" 'ruby-electric-bar))
 
+(defun ruby-electric-insert-end () 
+  "Insert \"end\" at point and reindent current line." 
+  (interactive) 
+  (insert "end") 
+  (ruby-indent-line t) 
+  (end-of-line)) 
+
 (defun ruby-electric-space (arg)
   (interactive "P")
   (self-insert-command (prefix-numeric-value arg))
   (if (ruby-electric-space-can-be-expanded-p)
       (save-excursion
-        (ruby-indent-line t)
-        (newline)
-        (ruby-insert-end))))
+	(ruby-indent-line t)
+	(newline)
+	(ruby-electric-insert-end))))
 
 (defun ruby-electric-code-at-point-p()
   (and ruby-electric-mode
        (let* ((properties (text-properties-at (point))))
-         (and (null (memq 'font-lock-string-face properties))
-              (null (memq 'font-lock-comment-face properties))))))
+	 (and (null (memq 'font-lock-string-face properties))
+	      (null (memq 'font-lock-comment-face properties))))))
 
 (defun ruby-electric-string-at-point-p()
   (and ruby-electric-mode
@@ -147,17 +158,17 @@ strings. Note that you must have Font Lock enabled."
 (defun ruby-electric-space-can-be-expanded-p()
   (if (ruby-electric-code-at-point-p)
       (let* ((ruby-electric-keywords-re 
-              (concat ruby-electric-simple-keywords-re "\\s-$"))
-             (ruby-electric-single-keyword-in-line-re 
-              (concat "\\s-*" ruby-electric-keywords-re)))
-        (save-excursion
-          (backward-word 1)
-          (or (looking-at ruby-electric-expandable-do-re)
-              (and (looking-at ruby-electric-keywords-re)
-                   (not (string= "do" (match-string 1)))
-                   (progn
-                     (beginning-of-line)
-                     (looking-at ruby-electric-single-keyword-in-line-re))))))))
+	      (concat ruby-electric-simple-keywords-re "\\s-$"))
+	     (ruby-electric-single-keyword-in-line-re 
+	      (concat "\\s-*" ruby-electric-keywords-re)))
+	(save-excursion
+	  (backward-word 1)
+	  (or (looking-at ruby-electric-expandable-do-re)
+	      (and (looking-at ruby-electric-keywords-re)
+		   (not (string= "do" (match-string 1)))
+		   (progn
+		     (beginning-of-line)
+		     (looking-at ruby-electric-single-keyword-in-line-re))))))))
 
 
 (defun ruby-electric-curlies(arg)
@@ -165,17 +176,17 @@ strings. Note that you must have Font Lock enabled."
   (self-insert-command (prefix-numeric-value arg))
   (if (ruby-electric-is-last-command-char-expandable-punct-p)
       (cond ((ruby-electric-code-at-point-p)
-             (insert " ")
-             (save-excursion
-               (if ruby-electric-newline-before-closing-bracket
-                   (newline))
-               (insert "}")))
-            ((ruby-electric-string-at-point-p)
-             (save-excursion
-               (backward-char 1)
-               (when (char-equal ?\# (preceding-char))
-                 (forward-char 1)
-                 (insert "}")))))))
+	     (insert " ")
+	     (save-excursion
+	       (if ruby-electric-newline-before-closing-bracket
+		   (newline))
+	       (insert "}")))
+	    ((ruby-electric-string-at-point-p)
+	     (save-excursion
+	       (backward-char 1)
+	       (when (char-equal ?\# (preceding-char))
+		 (forward-char 1)
+		 (insert "}")))))))
 
 (defun ruby-electric-matching-char(arg)
   (interactive "P")
@@ -183,8 +194,8 @@ strings. Note that you must have Font Lock enabled."
   (and (ruby-electric-is-last-command-char-expandable-punct-p)
        (ruby-electric-code-at-point-p)
        (save-excursion
-         (insert (cdr (assoc last-command-char 
-                             ruby-electric-matching-delimeter-alist))))))
+	 (insert (cdr (assoc last-command-char 
+			     ruby-electric-matching-delimeter-alist))))))
 
 (defun ruby-electric-bar(arg)
   (interactive "P")
@@ -192,9 +203,9 @@ strings. Note that you must have Font Lock enabled."
   (and (ruby-electric-is-last-command-char-expandable-punct-p)
        (ruby-electric-code-at-point-p)
        (and (save-excursion (re-search-backward ruby-electric-expandable-bar nil t))
-            (= (point) (match-end 0))) ;looking-back is missing on XEmacs
+	    (= (point) (match-end 0))) ;looking-back is missing on XEmacs
        (save-excursion 
-         (insert "|"))))
+	 (insert "|"))))
 
 
 (provide 'ruby-electric)
