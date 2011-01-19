@@ -16,3 +16,4 @@ elim/
 tramp
 \#*
 places
+session.*
