@@ -166,6 +166,9 @@
 ;(require 'rails-autoload)
 ;(require 'inf-ruby)
 
+;; Rinari
+(add-to-list 'load-path "~/.emacs.d/site-lisp/rinari")
+(require 'rinari)
 
 ;; ===================================================================
 ;; Git
