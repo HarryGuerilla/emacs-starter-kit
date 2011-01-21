@@ -166,6 +166,8 @@
 ;(require 'rails-autoload)
 ;(require 'inf-ruby)
 
+(require 'haml-mode)
+
 
 ;; ===================================================================
 ;; Git
