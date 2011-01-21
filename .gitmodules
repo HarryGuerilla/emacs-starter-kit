@@ -7,3 +7,6 @@
 [submodule "vendor/org-6.30e"]
 	path = vendor/org-6.30e
 	url = git://repo.or.cz/org-mode.git
+[submodule "site-lisp/rspec-mode"]
+	path = site-lisp/rspec-mode
+	url = https://github.com/pezra/rspec-mode.git
