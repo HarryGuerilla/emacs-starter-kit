@@ -166,7 +166,12 @@
 ;(require 'rails-autoload)
 ;(require 'inf-ruby)
 
+;haml
 (require 'haml-mode)
+
+;rspec
+(add-to-list 'load-path "~/.emacs.d/site-lisp/rspec-mode")
+(require 'rspec-mode)
 
 
 ;; ===================================================================
