@@ -170,6 +170,14 @@
 (add-to-list 'load-path "~/.emacs.d/site-lisp/rinari")
 (require 'rinari)
 
+;haml
+(require 'haml-mode)
+
+;rspec
+(add-to-list 'load-path "~/.emacs.d/site-lisp/rspec-mode")
+(require 'rspec-mode)
+
+
 ;; ===================================================================
 ;; Git
 ;; ===================================================================
