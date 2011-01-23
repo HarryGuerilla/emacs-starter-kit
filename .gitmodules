@@ -13,3 +13,6 @@
 [submodule "site-lisp/rspec-mode"]
 	path = site-lisp/rspec-mode
 	url = https://github.com/pezra/rspec-mode.git
+[submodule "site-lisp/org-mode"]
+	path = site-lisp/org-mode
+	url = git://orgmode.org/org-mode.git
