@@ -93,6 +93,7 @@
 (setq query-replace-highlight t)
 (setq require-final-newline t)
 (setq-default indent-tabs-mode nil)
+(setq-default tab-width 2)
 (server-start) ; allow access from emacs client
 (desktop-save-mode t) ; restore desktop on restart
 (setq require-final-newline t)
