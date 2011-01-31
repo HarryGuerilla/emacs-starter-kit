@@ -92,7 +92,7 @@
 (setq make-backup-files nil)
 (setq query-replace-highlight t)
 (setq require-final-newline t)
-(setq-default intent-tabs-mode nil)
+(setq-default indent-tabs-mode nil)
 (server-start) ; allow access from emacs client
 (desktop-save-mode t) ; restore desktop on restart
 (setq require-final-newline t)
@@ -176,6 +176,9 @@
 ;rspec
 (add-to-list 'load-path "~/.emacs.d/site-lisp/rspec-mode")
 (require 'rspec-mode)
+
+;sass
+(require 'sass-mode)
 
 
 ;; ===================================================================
