@@ -130,7 +130,7 @@
 
 ;; TAKEN FROM My Emacs For Rails
 ;; http://blog.wyeworks.com/2009/9/11/my-emacs-for-rails
-'(recentf-mode t)
+;;'(recentf-mode t)
 '(transient-mark-mode t)
 (setq make-backup-files nil)
 (setq font-lock-maximum-decoration t)
@@ -219,3 +219,8 @@
 (autoload 'twitter-status-edit "twitter" nil t)
 (global-set-key "\C-xt" 'twitter-get-friends-timeline)
 (add-hook 'twitter-status-edit-mode-hook 'longlines-mode)
+
+;; STOP TRAMP FROM AUTOLOADING
+(require 'recentf)
+(setq recentf-auto-cleanup 'never) ;; disable before we start recentf!
+(recentf-mode 1)
