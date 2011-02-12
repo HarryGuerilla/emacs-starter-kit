@@ -42,7 +42,7 @@
 (set-terminal-coding-system 'utf-8)
 (set-keyboard-coding-system 'utf-8)
 (prefer-coding-system 'utf-8)
-(setq default-frame-alist '((font . "inconsolata-11")))
+;(setq default-frame-alist '((font . "inconsolata-11")))
 (push '(font-backend xft x) default-frame-alist)
 (setq font-lock-maximum-decoration t)
 
@@ -109,3 +109,9 @@
 (semantic-load-enable-code-helpers)      ; Enable prototype help and smart completion 
 (global-srecode-minor-mode 1)            ; Enable template insertion menu
 
+
+;; ===================================================================
+;; ECB
+;; ===================================================================
+(add-to-list 'load-path "~/.emacs.d/site-lisp/ecb-2.40")
+(require 'ecb)
