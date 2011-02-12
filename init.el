@@ -167,3 +167,9 @@
 (setq explicit-sh-args '("-login" "-i"))
 ;(if (boundp 'w32-quote-process-args)
 ;  (setq w32-quote-process-args ?\")) ;; Include only for MS Windows.
+
+(setq jde-jdk-registry
+      (quote (("1.6.0_22" . "/System/Library/Frameworks/JavaVM.framework/Versions/CurrentJDK/")))
+)
+(setq jde-jdk 
+      (quote ("1.6.0_22")))
