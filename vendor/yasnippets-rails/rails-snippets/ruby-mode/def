@@ -1,6 +1,0 @@
-#name : def ... end
-#group : general
-# --
-def ${method}
-    ${...}
-end

@@ -1,4 +1,0 @@
-#name : has_one : ... 
-#group : rails.models
-# --
-has_one :${class}
