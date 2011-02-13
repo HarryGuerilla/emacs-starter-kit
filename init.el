@@ -50,11 +50,13 @@
 (autoload 'ansi-color-for-comint-mode-on "ansi-color" nil t)
 (add-hook 'shell-mode-hook 'ansi-color-for-comint-mode-on)
 
-;(require 'blank-mode)
-
-;(require 'highline)
-;(highline-mode 1) ; highlight current line
-
+; color-theme
+;; (add-to-list 'load-path "~/.emacs.d/site-lisp/color-theme-6.6.0/color-theme.el")
+;; (require 'color-theme)
+;; (eval-after-load "color-theme"
+;;   '(progn
+;;      (color-theme-initialize)
+;;      (color-theme-hober)))
 
 
 ;; ===================================================================
@@ -97,6 +99,20 @@
 (setq mac-command-key-is-meta t)
 (setq mac-command-modifier 'meta)
 (setq mac-option-modifier nil)
+
+;; fullscreen
+(load-file (expand-file-name "~/.emacs.d/site-lisp/maxframe.el"))
+(require 'maxframe)
+(defvar my-fullscreen-p t "Check if fullscreen is on or off")
+
+(defun my-toggle-fullscreen ()
+  (interactive)
+  (setq my-fullscreen-p (not my-fullscreen-p))
+  (if my-fullscreen-p
+	  (restore-frame)
+	(maximize-frame)))
+
+(global-set-key (kbd "M-RET") 'my-toggle-fullscreen)
 
 ;; ===================================================================
 ;; KEYBOARD SHORTCUTS
@@ -179,3 +195,23 @@
 )
 (setq jde-jdk 
       (quote ("1.6.0_22")))
+
+(require 'flymake)
+
+;; function does not exist in emacs 23.2
+(defun semantic-parse())
+
+
+;; ===================================================================
+;; Android
+;; ===================================================================
+
+(add-to-list 'load-path "~/.emacs.d/site-lisp/android.el")
+(require 'android)
+(add-to-list 'load-path "~/.emacs.d/site-lisp/android-mode.el")
+(require 'android-mode)
+(setq android-mode-sdk-dir "/Developer/android-sdk-mac_x86")
+(add-hook 'gud-mode-hook
+     (lambda ()
+            (add-to-list 'gud-jdb-classpath "/Developer/android-sdk-mac_x86/platforms/android-8/android.jar")
+            ))
