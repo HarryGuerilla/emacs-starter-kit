@@ -51,12 +51,13 @@
 (add-hook 'shell-mode-hook 'ansi-color-for-comint-mode-on)
 
 ; color-theme
-;; (add-to-list 'load-path "~/.emacs.d/site-lisp/color-theme-6.6.0/color-theme.el")
-;; (require 'color-theme)
-;; (eval-after-load "color-theme"
-;;   '(progn
-;;      (color-theme-initialize)
-;;      (color-theme-hober)))
+(add-to-list 'load-path "~/.emacs.d/site-lisp/color-theme-6.6.0")
+(require 'color-theme)
+(eval-after-load "color-theme"
+  '(progn
+     (color-theme-initialize)
+     (color-theme-dark-laptop)))
+;     (color-theme-hober)))
 
 
 ;; ===================================================================
