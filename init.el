@@ -216,3 +216,10 @@
      (lambda ()
             (add-to-list 'gud-jdb-classpath "/Developer/android-sdk-mac_x86/platforms/android-8/android.jar")
             ))
+
+;; ===================================================================
+;; Egg
+;; ===================================================================
+(setq exec-path (append exec-path '("/usr/local/bin")) )
+(add-to-list 'load-path (expand-file-name "~/.emacs.d/site-lisp/egg/"))
+(require 'egg)

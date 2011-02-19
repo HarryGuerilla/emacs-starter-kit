@@ -7,3 +7,6 @@
 [submodule "vendor/org-6.30e"]
 	path = vendor/org-6.30e
 	url = git://repo.or.cz/org-mode.git
+[submodule "site-lisp/egg"]
+	path = site-lisp/egg
+	url = https://github.com/byplayer/egg.git
