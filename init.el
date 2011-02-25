@@ -210,3 +210,11 @@
 (global-set-key "\C-ca" 'org-agenda)
 (global-set-key "\C-cb" 'org-iswitchb)
 (require 'org-install)
+
+;; Set to the location of your Org files on your local system
+(setq org-directory "~/Dropbox/Org")
+;; Set to the name of the file where new notes will be stored
+(setq org-mobile-inbox-for-pull "~/Dropbox/Org/inbox.org")
+;; Set to <your Dropbox root directory>/MobileOrg.
+(setq org-mobile-directory "~/Dropbox/MobileOrg")
+(setq org-agenda-files (quote ("~/Dropbox/Org/fancyhair.org" "~/Dropbox/Org/Personal.org" "~/Dropbox/Org/ilearnthings.org")))
