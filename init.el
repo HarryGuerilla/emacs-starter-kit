@@ -2,6 +2,7 @@
 ;; ===================================================================
 ;; CUSTOMIZED VARIABLES
 ;; ===================================================================
+(setq load-path (cons (expand-file-name "~/.emacs.d/site-lisp") load-path))
 
 (setq custom-file "~/.emacs.d/custom.el")
 (load custom-file)
@@ -52,18 +53,21 @@
 
 ; color-theme
 (add-to-list 'load-path "~/.emacs.d/site-lisp/color-theme-6.6.0")
+(load "~/.emacs.d/site-lisp/color-theme-solarized.el")
 (require 'color-theme)
-(eval-after-load "color-theme"
-  '(progn
-     (color-theme-initialize)
-     (color-theme-dark-laptop)))
+(require 'zenburn)
+(zenburn)
+;(eval-after-load "color-theme"
+;  '(progn
+;     (color-theme-initialize)
+;     (color-theme-solarized-dark)))
+;     (color-theme-dark-laptop)))
 ;     (color-theme-hober)))
 
 
 ;; ===================================================================
 ;; GENERAL CONFIGURATION
 ;; ===================================================================
-(setq load-path (cons (expand-file-name "~/.emacs.d/site-lisp") load-path))
 (require 'cl)
 (require 'saveplace)
 (require 'ffap)
