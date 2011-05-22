@@ -255,3 +255,10 @@
 (setq exec-path (append exec-path '("/usr/local/bin")) )
 (add-to-list 'load-path (expand-file-name "~/.emacs.d/site-lisp/egg/"))
 (require 'egg)
+
+
+;; ===================================================================
+;; Magit
+;; ===================================================================
+(add-to-list 'load-path (expand-file-name "~/.emacs.d/site-lisp/magit-1.0.0"))
+(require 'magit)
