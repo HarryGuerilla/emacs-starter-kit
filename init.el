@@ -154,16 +154,16 @@
 (add-to-list 'load-path "~/.emacs.d/site-lisp/ecb-2.40")
 (require 'ecb)
 (setq ecb-auto-activate t)
-(setq ecb-compilation-buffer-names (quote (("*Calculator*") ("*vc*") ("*vc-diff*") ("*Apropos*") ("*Occur*") ("*shell*") ("\\*[cC]ompilation.*\\*" . t) ("\\*i?grep.*\\*") ("*JDEE Compile Server*") ("*Help*") ("*Completions*") ("*Backtrace*") ("*Compile-log*") ("*bsh*") ("*Messages*"))))
-(setq ecb-compile-window-height 4)
-(setq ecb-compile-window-width (quote edit-window))
-(setq ecb-enlarged-compilation-window-max-height (quote half))
+;; (setq ecb-compilation-buffer-names (quote (("*Calculator*") ("*vc*") ("*vc-diff*") ("*Apropos*") ("*Occur*") ("*shell*") ("\\*[cC]ompilation.*\\*" . t) ("\\*i?grep.*\\*") ("*JDEE Compile Server*") ("*Help*") ("*Completions*") ("*Backtrace*") ("*Compile-log*") ("*bsh*") ("*Messages*"))))
+;; (setq ecb-compile-window-height 4)
+;; (setq ecb-compile-window-width (quote edit-window))
+;; (setq ecb-enlarged-compilation-window-max-height (quote half))
 (setq ecb-layout-name "left15")
 (setq ecb-layout-window-sizes (quote (("left15" (0.18435754189944134 . 0.75) (0.18435754189944134 . 0.25)))))
 (setq ecb-options-version "2.40")
 (setq ecb-primary-secondary-mouse-buttons (quote mouse-1--mouse-2))
-(setq ecb-scroll-other-window-scrolls-compile-window t)
-(setq ecb-source-path (quote ("~/Sites" "~/Code/android")))
+;; (setq ecb-scroll-other-window-scrolls-compile-window t)
+(setq ecb-source-path (quote ("~/Sites" "~/Code/Android")))
 (setq ecb-tip-of-the-day nil)
 (setq ecb-tree-buffer-style (quote ascii-guides))
 (setq ecb-tree-indent 2)
@@ -220,10 +220,10 @@
 ;  (setq w32-quote-process-args ?\")) ;; Include only for MS Windows.
 
 (setq jde-jdk-registry
-      (quote (("1.6.0_22" . "/System/Library/Frameworks/JavaVM.framework/Versions/CurrentJDK/")))
+      (quote (("1.6.0_24" . "/System/Library/Frameworks/JavaVM.framework/Versions/CurrentJDK/")))
 )
 (setq jde-jdk 
-      (quote ("1.6.0_22")))
+      (quote ("1.6.0_24")))
 
 (require 'flymake)
 
