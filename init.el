@@ -87,7 +87,7 @@
 (mouse-wheel-mode t)
 (setq default-directory "~/")
 (fset 'yes-or-no-p 'y-or-n-p)
-(setq default-major-mode 'text-mode)
+(setq major-mode 'text-mode)
 (desktop-save-mode 1) ;; Saves buffers between sessions
 (defalias 'list-buffers 'ibuffer)
 
@@ -252,13 +252,14 @@
 ;; ===================================================================
 ;; Egg
 ;; ===================================================================
-(setq exec-path (append exec-path '("/usr/local/bin")) )
-(add-to-list 'load-path (expand-file-name "~/.emacs.d/site-lisp/egg/"))
-(require 'egg)
+;;(setq exec-path (append exec-path '("/usr/local/bin")) )
+;;(add-to-list 'load-path (expand-file-name "~/.emacs.d/site-lisp/egg/"))
+;;(require 'egg)
 
 
 ;; ===================================================================
 ;; Magit
 ;; ===================================================================
+(setq exec-path (append exec-path '("/usr/local/bin")) )
 (add-to-list 'load-path (expand-file-name "~/.emacs.d/site-lisp/magit-1.0.0"))
 (require 'magit)
