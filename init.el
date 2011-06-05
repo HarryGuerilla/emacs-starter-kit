@@ -223,6 +223,22 @@
 (global-srecode-minor-mode 1)            ; Enable template insertion menu
 
 
+;; ===================================================================
+;; ECB
+;; ===================================================================
+(add-to-list 'load-path "~/.emacs.d/site-lisp/ecb-2.40")
+(require 'ecb)
+(setq ecb-auto-activate t)
+(setq ecb-layout-name "left15")
+(setq ecb-layout-window-sizes (quote (("left15" (0.18435754189944134 . 0.75) (0.18435754189944134 . 0.25)))))
+(setq ecb-options-version "2.40")
+(setq ecb-primary-secondary-mouse-buttons (quote mouse-1--mouse-2))
+(setq ecb-source-path (quote ("~/Sites" "~/Code/Android")))
+(setq ecb-tip-of-the-day nil)
+(setq ecb-tree-buffer-style (quote ascii-guides))
+(setq ecb-tree-indent 2)
+(setq ecb-vc-enable-support t)
+(setq ecb-windows-width 0.15)
 
 
 ;; ===================================================================
