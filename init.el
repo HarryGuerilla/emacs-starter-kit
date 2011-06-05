@@ -241,6 +241,71 @@
 (setq ecb-windows-width 0.15)
 
 
+
+;; ===================================================================
+;; JDEE
+;; ===================================================================
+
+(add-to-list 'load-path (expand-file-name "~/.emacs.d/site-lisp/jdee-2.4.0.1/lisp"))
+(add-to-list 'load-path (expand-file-name "~/.emacs.d/site-lisp/elib-1.0"))
+
+;; Set the debug option to enable a backtrace when a
+;; problem occurs.
+(setq debug-on-error t)
+
+;; If you want Emacs to defer loading the JDE until you open a 
+;; Java file, edit the following line
+;; (setq defer-loading-jde nil)
+;; to read:
+;; (setq defer-loading-jde t)
+;;
+(setq defer-loading-jde t)
+
+(if defer-loading-jde
+    (progn
+      (autoload 'jde-mode "jde" "JDE mode." t)
+      (setq auto-mode-alist
+	    (append
+	     '(("\\.java\\'" . jde-mode))
+	     auto-mode-alist)))
+  (require 'jde))
+
+;; Sets the basic indentation for Java source files
+;; to two spaces.
+(defun my-jde-mode-hook ()
+  (setq c-basic-offset 2))
+
+(add-hook 'jde-mode-hook 'my-jde-mode-hook)
+
+;; Include the following only if you want to run
+;; bash as your shell.
+
+;; Setup Emacs to run bash as its primary shell.
+;(setq shell-file-name "bash")
+(setq shell-file-name "zsh")
+(setq shell-command-switch "-c")
+(setq explicit-shell-file-name shell-file-name)
+(setenv "SHELL" shell-file-name)
+(setq explicit-sh-args '("-login" "-i"))
+;;(if (boundp 'w32-quote-process-args)
+;;  (setq w32-quote-process-args ?\")) ;; Include only for MS Windows.
+
+(setq jde-jdk-registry
+      (quote (("1.6.0_24" . "/System/Library/Frameworks/JavaVM.framework/Versions/CurrentJDK/")))
+)
+(setq jde-jdk 
+      (quote ("1.6.0_24")))
+
+(require 'flymake)
+
+;; function does not exist in emacs 23.2
+(defun semantic-parse())
+
+(setq jde-complete-function (quote jde-complete-menu))
+(setq jde-gen-k&r t)
+(setq jde-global-classpath nil)
+
+
 ;; ===================================================================
 ;; ORG MODE
 ;; ===================================================================
