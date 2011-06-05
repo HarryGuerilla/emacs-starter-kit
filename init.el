@@ -44,13 +44,16 @@
 ;; set color theme
 (add-to-list 'load-path "~/.emacs.d/site-lisp/color-theme-6.6.0")
 (load-file "~/.emacs.d/site-lisp/color-theme-6.6.0/color-theme-tangotango.el")
+(load-file "~/.emacs.d/site-lisp/color-theme-6.6.0/color-theme-vibrant-ink.el")
+(load-file "~/.emacs.d/site-lisp/color-theme-6.6.0/zenburn.el")
+(load-file "~/.emacs.d/site-lisp/color-theme-6.6.0/color-theme-solarized.el")
+(load-file "~/.emacs.d/site-lisp/color-theme-6.6.0/color-theme-railscasts.el")
 (add-to-list 'color-themes 
   '(color-theme-tangotango "Tango Tango" "http://blog.nozav.org/post/2010/07/12/Updated-tangotango-emacs-color-theme")
 )
-(load-file "~/.emacs.d/site-lisp/color-theme-6.6.0/color-theme-railscasts.el")
-(add-to-list 'color-themes '(color-theme-railscasts "Railscasts" "<http://railscasts.org">))
-(load-file "~/.emacs.d/site-lisp/color-theme-6.6.0/color-theme-vibrant-ink.el")
 (add-to-list 'color-themes '(color-theme-vibrant-ink "Vibrant Ink" "<http://github.com/mig/color-theme-vibrant-ink"))
+(add-to-list 'color-themes '(color-theme-zenburn "Zenburn" "<http://github.com/bbatsov/zenburn-emacs>"))
+(add-to-list 'color-themes '(color-theme-railscasts "Railscasts" "Railscasts"))
 
 (require 'color-theme)
 (eval-after-load "color-theme"

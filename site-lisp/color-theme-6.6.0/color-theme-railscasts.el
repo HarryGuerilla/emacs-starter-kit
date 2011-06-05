@@ -12,6 +12,7 @@
 ;;
 
 (defun color-theme-railscasts ()
+  "Railscasts color theme"
   (interactive)
   (color-theme-install
    '(color-theme-railscasts
