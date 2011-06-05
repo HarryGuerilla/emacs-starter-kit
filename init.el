@@ -114,6 +114,12 @@
 ;; make emacs use the clipboard
 (setq x-select-enable-clipboard t)
 
+;; mac keyboard keys
+(setq mac-option-key-is-meta nil)
+(setq mac-command-key-is-meta t)
+(setq mac-command-modifier 'meta)
+(setq mac-option-modifier nil)
+
 ;; fullscreen
 (load-file (expand-file-name "~/.emacs.d/site-lisp/maxframe.el"))
 (require 'maxframe)
