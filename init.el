@@ -325,3 +325,18 @@
 ;; Set to <your Dropbox root directory>/MobileOrg.
 (setq org-mobile-directory "~/Dropbox/MobileOrg")
 (setq org-agenda-files (quote ("~/Dropbox/Org/fancyhair.org" "~/Dropbox/Org/Personal.org" "~/Dropbox/Org/ilearnthings.org")))
+
+
+;; ===================================================================
+;; Android
+;; ===================================================================
+
+(add-to-list 'load-path "~/.emacs.d/site-lisp/android.el")
+(require 'android)
+(add-to-list 'load-path "~/.emacs.d/site-lisp/android-mode.el")
+(require 'android-mode)
+(setq android-mode-sdk-dir "/Developer/android-sdk-mac_x86")
+(add-hook 'gud-mode-hook
+     (lambda ()
+            (add-to-list 'gud-jdb-classpath "/Developer/android-sdk-mac_x86/platforms/android-8/android.jar")
+            ))
