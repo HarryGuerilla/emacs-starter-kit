@@ -2,8 +2,8 @@
 
 ;; Copyright (C) 2005 Joakim Verona, Eric Ludlam
 
-;; Author: Tony Pelaez <tony@oscock>
-;; Created: 2011-01-19 12:27:57-0800
+;; Author: Tony Pelaez <tony@Tony-Pelaezs-MacBook.local>
+;; Created: 2011-02-11 21:11:28-0800
 ;; Keywords: syntax
 ;; X-RCS: $Id$
 

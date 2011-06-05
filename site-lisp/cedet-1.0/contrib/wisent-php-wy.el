@@ -2,8 +2,8 @@
 
 ;; Copyright (C) 2008 Free Software Foundation
 
-;; Author: Tony Pelaez <tony@oscock>
-;; Created: 2011-01-19 12:28:59-0800
+;; Author: Tony Pelaez <tony@Tony-Pelaezs-MacBook.local>
+;; Created: 2011-02-11 21:11:43-0800
 ;; Keywords: syntax
 ;; X-RCS: $Id$
 

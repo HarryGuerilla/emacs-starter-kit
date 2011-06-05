@@ -2,8 +2,8 @@
 
 ;; Copyright (C) 2002, 2003, 2004, 2007 Richard Kim
 
-;; Author: Tony Pelaez <tony@oscock>
-;; Created: 2011-01-19 12:27:54-0800
+;; Author: Tony Pelaez <tony@Tony-Pelaezs-MacBook.local>
+;; Created: 2011-02-11 21:11:27-0800
 ;; Keywords: syntax
 ;; X-RCS: $Id$
 

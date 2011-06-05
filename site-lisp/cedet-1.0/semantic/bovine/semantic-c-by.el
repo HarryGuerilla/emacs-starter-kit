@@ -2,8 +2,8 @@
 
 ;; Copyright (C) 1999, 2000, 2001, 2002, 2003, 2004, 2005, 2006, 2007, 2008, 2009, 2010 Eric M. Ludlam
 
-;; Author: Tony Pelaez <tony@oscock>
-;; Created: 2011-01-19 12:28:06-0800
+;; Author: Tony Pelaez <tony@Tony-Pelaezs-MacBook.local>
+;; Created: 2011-02-11 21:11:30-0800
 ;; Keywords: syntax
 ;; X-RCS: $Id$
 
