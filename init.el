@@ -204,6 +204,10 @@
 ;sass
 (require 'sass-mode)
 
+;coffeescript
+(add-to-list 'load-path "~/.emacs.d/site-lisp/coffee-mode")
+(require 'coffee-mode)
+
 
 ;; ===================================================================
 ;; Git
@@ -239,7 +243,6 @@
 (setq ecb-tree-indent 2)
 (setq ecb-vc-enable-support t)
 (setq ecb-windows-width 0.15)
-
 
 
 ;; ===================================================================
