@@ -2,6 +2,8 @@
 ;; ===========
 ;; basic emacs configuration for ruby on rails development
 
+
+
 ;; ===================================================================
 ;; CUSTOMIZED VARIABLES
 ;; ===================================================================
@@ -13,6 +15,7 @@
 (setq is-a-mac nil)
 (if (equal system-type 'darwin)
     (setq is-a-mac t))
+
 
 
 ;; ===================================================================
@@ -111,7 +114,7 @@
 (setq default-major-mode 'text-mode)
 (desktop-save-mode 1) ;; Saves buffers between sessions
 
-;; SET MAC SYSTEM FONTS FOR TERMINAL
+;; SET SYSTEM FONTS FOR TERMINAL
 (set-terminal-coding-system 'utf-8)
 (set-keyboard-coding-system 'utf-8)
 (prefer-coding-system 'utf-8)
@@ -140,6 +143,8 @@
 
 (global-set-key (kbd "M-RET") 'my-toggle-fullscreen)
 
+
+
 ;; ===================================================================
 ;; KEYBOARD SHORTCUTS
 ;; ===================================================================
@@ -148,6 +153,7 @@
 (global-set-key "\M-s" 'save-buffer)
 (global-set-key "\C-xt" 'term)
 (global-set-key "\M-g" 'magit-status)
+
 
 
 ;; ===================================================================
@@ -215,6 +221,7 @@
 (require 'coffee-mode)
 
 
+
 ;; ===================================================================
 ;; Git
 ;; ===================================================================
@@ -238,6 +245,7 @@
 (global-srecode-minor-mode 1)            ; Enable template insertion menu
 
 
+
 ;; ===================================================================
 ;; ECB
 ;; ===================================================================
@@ -254,6 +262,7 @@
 (setq ecb-tree-indent 2)
 (setq ecb-vc-enable-support t)
 (setq ecb-windows-width 0.15)
+
 
 
 ;; ===================================================================
@@ -320,6 +329,7 @@
 (setq jde-global-classpath nil)
 
 
+
 ;; ===================================================================
 ;; ORG MODE
 ;; ===================================================================
@@ -339,6 +349,7 @@
 ;; Set to <your Dropbox root directory>/MobileOrg.
 (setq org-mobile-directory "~/Dropbox/MobileOrg")
 (setq org-agenda-files (quote ("~/Dropbox/Org/fancyhair.org" "~/Dropbox/Org/Personal.org" "~/Dropbox/Org/ilearnthings.org")))
+
 
 
 ;; ===================================================================
