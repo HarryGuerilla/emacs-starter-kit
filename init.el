@@ -222,6 +222,11 @@
 (require 'magit)
 
 
+(if (equal is-a-mac t) ; on one of my macs git is installed in /usr/local/bin
+    (push "/usr/local/bin" exec-path))
+
+
+
 ;; ===================================================================
 ;; CEDET
 ;; ===================================================================
