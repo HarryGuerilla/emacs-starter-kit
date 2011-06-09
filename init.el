@@ -9,6 +9,11 @@
 (setq custom-file "~/.emacs.d/custom.el")
 (load custom-file)
 
+;; test to see if this computer is a mac
+(setq is-a-mac nil)
+(if (equal system-type 'darwin)
+    (setq is-a-mac t))
+
 
 ;; ===================================================================
 ;; APPEARANCE
