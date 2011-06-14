@@ -115,6 +115,8 @@
 (fset 'yes-or-no-p 'y-or-n-p)
 (setq default-major-mode 'text-mode)
 (desktop-save-mode 1) ;; Saves buffers between sessions
+(global-set-key (kbd "C-x C-b") 'ibuffer) ; replace BufferMenu with ibuffer
+    (autoload 'ibuffer "ibuffer" "List buffers." t)
 
 ;; SET SYSTEM FONTS FOR TERMINAL
 (set-terminal-coding-system 'utf-8)
