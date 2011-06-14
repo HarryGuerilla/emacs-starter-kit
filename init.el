@@ -16,6 +16,8 @@
 (if (equal system-type 'darwin)
     (setq is-a-mac t))
 
+(setq load-path (cons (expand-file-name "~/.emacs.d/site-lisp") load-path))
+
 
 
 ;; ===================================================================
@@ -83,15 +85,15 @@
 
 ;(require 'blank-mode)
 
-;(require 'highline)
-;(highline-mode 1) ; highlight current line
+(require 'highline)
+(highline-mode 1) ; highlight current line
+(setq highline-face '((((class color) (background dark)) (:background "#343030"))))
 
 
 
 ;; ===================================================================
 ;; GENERAL CONFIGURATION
 ;; ===================================================================
-(setq load-path (cons (expand-file-name "~/.emacs.d/site-lisp") load-path))
 (require 'cl)
 (require 'saveplace)
 (require 'ffap)
