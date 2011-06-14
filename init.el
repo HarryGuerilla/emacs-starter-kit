@@ -134,7 +134,6 @@
 (setq mac-option-modifier nil)
 
 ;; fullscreen
-(load-file (expand-file-name "~/.emacs.d/site-lisp/maxframe.el"))
 (require 'maxframe)
 (defvar my-fullscreen-p t "Check if fullscreen is on or off")
 
@@ -202,6 +201,7 @@
         (ruby-electric-mode t)
         ))
 
+;; as an alternative to Rinari you can use Rails-mode
 ;(setq load-path (cons (expand-file-name "~/.emacs.d/site-lisp/rails-mode") load-path))
 ;(require 'rails-autoload)
 ;(require 'inf-ruby)
@@ -360,9 +360,7 @@
 ;; Android
 ;; ===================================================================
 
-(add-to-list 'load-path "~/.emacs.d/site-lisp/android.el")
 (require 'android)
-(add-to-list 'load-path "~/.emacs.d/site-lisp/android-mode.el")
 (require 'android-mode)
 (setq android-mode-sdk-dir "/Developer/android-sdk-mac_x86")
 (add-hook 'gud-mode-hook
