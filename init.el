@@ -367,3 +367,16 @@
      (lambda ()
             (add-to-list 'gud-jdb-classpath "/Developer/android-sdk-mac_x86/platforms/android-8/android.jar")
             ))
+
+
+
+;; ===================================================================
+;; YASnippet
+;; ===================================================================
+
+(add-to-list 'load-path "~/.emacs.d/site-lisp/yasnippet-0.6.1c")
+(require 'yasnippet) 
+(yas/initialize)
+(yas/load-directory "~/.emacs.d/site-lisp/yasnippet-0.6.1c/snippets")
+(setq yas/prompt-functions '(yas/dropdown-prompt))
+(setq yas/global-mode t)
