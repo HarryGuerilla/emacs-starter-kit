@@ -146,6 +146,9 @@
 
 (global-set-key (kbd "M-RET") 'my-toggle-fullscreen)
 
+;; Copy and Paste
+(setq x-select-enable-clipboard t)
+
 
 
 ;; ===================================================================
