@@ -113,7 +113,8 @@
 (mouse-wheel-mode t)
 (setq default-directory "~/")
 (fset 'yes-or-no-p 'y-or-n-p)
-(setq default-major-mode 'text-mode)
+;;(setq default-major-mode 'text-mode)
+(setq major-mode 'text-mode)
 (desktop-save-mode 1) ;; Saves buffers between sessions
 (global-set-key (kbd "C-x C-b") 'ibuffer) ; replace BufferMenu with ibuffer
     (autoload 'ibuffer "ibuffer" "List buffers." t)
