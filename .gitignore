@@ -1,7 +1,7 @@
 loaddefs.el*
 backups/*
 auto-save-list
-custom.el
+custom.el*
 *elc
 url/cookies
 nthumbs/*
