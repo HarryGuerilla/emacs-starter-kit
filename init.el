@@ -228,7 +228,11 @@
 (add-to-list 'load-path "~/.emacs.d/site-lisp/coffee-mode")
 (require 'coffee-mode)
 
-
+;rhtml
+(add-to-list 'load-path "~/.emacs.d/site-lisp/rhtml")
+     (require 'rhtml-mode)
+     (add-hook 'rhtml-mode-hook
+     	  (lambda () (rinari-launch)))
 
 ;; ===================================================================
 ;; Git
@@ -384,3 +388,20 @@
 (yas/load-directory "~/.emacs.d/site-lisp/yasnippet-0.6.1c/snippets")
 (setq yas/prompt-functions '(yas/dropdown-prompt))
 (setq yas/global-mode t)
+
+
+
+;; ===================================================================
+;; Pymacs
+;; ===================================================================
+;; (load "~/.emacs.d/site-lisp/pymacs.el")
+;; (autoload 'pymacs-apply "pymacs")
+;; (autoload 'pymacs-call "pymacs")
+;; (autoload 'pymacs-eval "pymacs" nil t)
+;; (autoload 'pymacs-exec "pymacs" nil t)
+;; (autoload 'pymacs-load "pymacs" nil t)
+;; ;;(eval-after-load "pymacs"
+;; ;;  '(add-to-list 'pymacs-load-path YOUR-PYMACS-DIRECTORY"))
+;; (require 'pymacs)
+;; (pymacs-load "ropemacs" "rope-")
+
