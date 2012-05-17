@@ -49,7 +49,7 @@
 (setq column-number-mode t)
 
 ;; stop cursor from blinking
-(blink-cursor-mode -1)
+ ; (blink-cursor-mode -1)
 
 ;; set color theme
 (add-to-list 'load-path "~/.emacs.d/site-lisp/color-theme-6.6.0")
@@ -75,9 +75,11 @@
 (set-terminal-coding-system 'utf-8)
 (set-keyboard-coding-system 'utf-8)
 (prefer-coding-system 'utf-8)
-(setq default-frame-alist '((font . "inconsolata-11")))
-(push '(font-backend xft x) default-frame-alist)
-(setq font-lock-maximum-decoration t)
+
+; Setting font attributes was causing errors and slowdown
+;;(setq default-frame-alist '((font . "inconsolata-11")))
+;;(push '(font-backend xft x) default-frame-alist)
+;;(setq font-lock-maximum-decoration t)
 
 ;; Color for terminal
 (autoload 'ansi-color-for-comint-mode-on "ansi-color" nil t)
@@ -108,14 +110,14 @@
 (setq-default indent-tabs-mode nil)
 (setq-default tab-width 2)
 (server-start) ; allow access from emacs client
-(desktop-save-mode t) ; restore desktop on restart
+; saving desktop could prevent the daemon from starting due to conflicting pid
+;;(desktop-save-mode t) ; restore desktop on restart
 (setq require-final-newline t)
 (mouse-wheel-mode t)
 (setq default-directory "~/")
 (fset 'yes-or-no-p 'y-or-n-p)
 ;;(setq default-major-mode 'text-mode)
 (setq major-mode 'text-mode)
-(desktop-save-mode 1) ;; Saves buffers between sessions
 (global-set-key (kbd "C-x C-b") 'ibuffer) ; replace BufferMenu with ibuffer
     (autoload 'ibuffer "ibuffer" "List buffers." t)
 
@@ -262,8 +264,9 @@
 ;; ECB
 ;; ===================================================================
 (add-to-list 'load-path "~/.emacs.d/site-lisp/ecb-2.40")
+(require 'ecb-autoloads)
 (require 'ecb)
-(setq ecb-auto-activate t)
+;(setq ecb-auto-activate t)
 (setq ecb-layout-name "left15")
 (setq ecb-layout-window-sizes (quote (("left15" (0.18435754189944134 . 0.75) (0.18435754189944134 . 0.25)))))
 (setq ecb-options-version "2.40")
