@@ -58,18 +58,25 @@
 (load-file "~/.emacs.d/site-lisp/color-theme-6.6.0/zenburn.el")
 (load-file "~/.emacs.d/site-lisp/color-theme-6.6.0/color-theme-solarized.el")
 (load-file "~/.emacs.d/site-lisp/color-theme-6.6.0/color-theme-railscasts.el")
+(load-file "~/.emacs.d/site-lisp/color-theme-6.6.0/color-theme-tomorrow.el")
+(load-file "~/.emacs.d/site-lisp/color-theme-6.6.0/tomorrow-night-theme.el")
+(load-file "~/.emacs.d/site-lisp/color-theme-6.6.0/tomorrow-night-bright-theme.el")
 (add-to-list 'color-themes 
   '(color-theme-tangotango "Tango Tango" "http://blog.nozav.org/post/2010/07/12/Updated-tangotango-emacs-color-theme")
 )
 (add-to-list 'color-themes '(color-theme-vibrant-ink "Vibrant Ink" "<http://github.com/mig/color-theme-vibrant-ink"))
 (add-to-list 'color-themes '(color-theme-zenburn "Zenburn" "<http://github.com/bbatsov/zenburn-emacs>"))
 (add-to-list 'color-themes '(color-theme-railscasts "Railscasts" "Railscasts"))
+(add-to-list 'color-themes '(color-theme-tomorrow "Tomorrow" "<Tomorrow theme>"))
+(add-to-list 'color-themes '(color-theme-tomorrow "Tomorrow Night" "<Tomorrow theme>"))
+(add-to-list 'color-themes '(color-theme-tomorrow "Tomorrow Night Bright" "<Tomorrow theme>"))
 
 (require 'color-theme)
 (eval-after-load "color-theme"
   '(progn
      (color-theme-initialize)
-     (color-theme-railscasts)))
+;     (color-theme-railscasts)))
+     (color-theme-tomorrow-night)))
 
 ;; Set Font attributes
 (set-terminal-coding-system 'utf-8)
@@ -80,6 +87,7 @@
 ;;(setq default-frame-alist '((font . "inconsolata-11")))
 ;;(push '(font-backend xft x) default-frame-alist)
 ;;(setq font-lock-maximum-decoration t)
+(set-face-attribute 'default nil :height 80)
 
 ;; Color for terminal
 (autoload 'ansi-color-for-comint-mode-on "ansi-color" nil t)
@@ -252,8 +260,9 @@
 ;; CEDET
 ;; ===================================================================
 
-(add-to-list 'load-path (expand-file-name "~/.emacs.d/site-lisp/cedet-1.0/common"))
-(load-file (expand-file-name "~/.emacs.d/site-lisp/cedet-1.0/common/cedet.el"))
+;;(add-to-list 'load-path (expand-file-name "~/.emacs.d/site-lisp/cedet-1.1/common"))
+(load-file "~/.emacs.d/site-lisp/cedet-1.0/common/cedet.el")
+;;(load-file (expand-file-name "~/.emacs.d/site-lisp/cedet-1.0/common/cedet.el"))
 (global-ede-mode 1)                      ; Enable the Project management system
 (semantic-load-enable-code-helpers)      ; Enable prototype help and smart completion 
 (global-srecode-minor-mode 1)            ; Enable template insertion menu
@@ -264,14 +273,14 @@
 ;; ECB
 ;; ===================================================================
 (add-to-list 'load-path "~/.emacs.d/site-lisp/ecb-2.40")
+;;(require 'ecb)
 (require 'ecb-autoloads)
-(require 'ecb)
-;(setq ecb-auto-activate t)
+(setq ecb-auto-activate t)
 (setq ecb-layout-name "left15")
 (setq ecb-layout-window-sizes (quote (("left15" (0.18435754189944134 . 0.75) (0.18435754189944134 . 0.25)))))
 (setq ecb-options-version "2.40")
 (setq ecb-primary-secondary-mouse-buttons (quote mouse-1--mouse-2))
-(setq ecb-source-path (quote ("~/Sites" "~/Code/Android")))
+(setq ecb-source-path (quote ("~/Sites" "~/Code")))
 (setq ecb-tip-of-the-day nil)
 (setq ecb-tree-buffer-style (quote ascii-guides))
 (setq ecb-tree-indent 2)
