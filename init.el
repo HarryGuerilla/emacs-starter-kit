@@ -406,3 +406,9 @@
 ;; ===================================================================
 ;; Python
 ;; ===================================================================
+
+(add-to-list 'load-path "~/.emacs.d/site-lisp/python-mode.el-6.0.8/") 
+(setq py-install-directory "~/.emacs.d/site-lisp/python-mode.el-6.0.8/")
+(require 'python-mode)
+(add-to-list 'auto-mode-alist '("\\.py\\'" . python-mode))
+(setq py-shell-name "ipython")
