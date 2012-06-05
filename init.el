@@ -99,6 +99,10 @@
 (highline-mode 1) ; highlight current line
 (setq highline-face '((((class color) (background dark)) (:background "#343030"))))
 
+(require 'lambda-mode)
+(add-hook 'python-mode-hook #'lambda-mode 1)
+(setq lambda-symbol (string (make-char 'greek-iso8859-7 107)))
+
 
 
 ;; ===================================================================
