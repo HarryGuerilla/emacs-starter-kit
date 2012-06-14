@@ -248,6 +248,19 @@
      (add-hook 'rhtml-mode-hook
      	  (lambda () (rinari-launch)))
 
+;re-map tab for yas
+(defun yas/advise-indent-function (function-symbol)
+  (eval `(defadvice ,function-symbol (around yas/try-expand-first activate)
+           ,(format
+             "Try to expand a snippet before point, then call `%s' as usual"
+             function-symbol)
+           (let ((yas/fallback-behavior nil))
+             (unless (and (interactive-p)
+                          (yas/expand))
+               ad-do-it)))))
+
+(yas/advise-indent-function 'ruby-indent-line)
+
 ;; ===================================================================
 ;; Git
 ;; ===================================================================
@@ -402,19 +415,24 @@
 (require 'yasnippet) 
 (yas/initialize)
 (yas/load-directory "~/.emacs.d/site-lisp/yasnippet-0.6.1c/snippets")
-(setq yas/prompt-functions '(yas/dropdown-prompt))
+;;(setq yas/prompt-functions '(yas/dropdown-prompt))
 (setq yas/global-mode t)
 
 
+;; ===================================================================
+;; Autocomplete
+;; ===================================================================
+(add-to-list 'load-path "~/.emacs.d/site-lisp/auto-complete-1.3.1")
+(require 'auto-complete-config)
+(add-to-list 'ac-dictionary-directories "~/.emacs.d/site-lisp/auto-complete-1.3.1/dict.enabled")
+
+(ac-config-default)
 
 ;; ===================================================================
 ;; Python
 ;; ===================================================================
 
 (add-to-list 'load-path "~/.emacs.d/site-lisp/python-mode.el-6.0.8/") 
-(setq py-install-directory "~/.emacs.d/site-lisp/python-mode.el-6.0.8/")
-(require 'python-mode)
-(add-to-list 'auto-mode-alist '("\\.py\\'" . python-mode))
-(setq py-shell-name "ipython")
-
-(require 'ipython)
+(autoload 'python-mode "python-mode.el" "Python mode." t)
+(setq auto-mode-alist (append '(("/*.\.py$" . python-mode)) auto-mode-alist))
+(setq py-shell-name "/usr/bin/python3")
