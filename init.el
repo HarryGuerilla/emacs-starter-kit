@@ -436,3 +436,10 @@
 (autoload 'python-mode "python-mode.el" "Python mode." t)
 (setq auto-mode-alist (append '(("/*.\.py$" . python-mode)) auto-mode-alist))
 (setq py-shell-name "/usr/bin/python3")
+
+(add-to-list 'load-path "~/.emacs.d/site-lisp/pylookup/") 
+(autoload 'pylookup-lookup "pylookup")
+(autoload 'pylookup-update "pylookup")
+(setq pylookup-program "~/.emacs.d/site-lisp/pylookup/pylookup.py")
+(setq pylookup-db-file "~/.emacs.d/site-lisp/pylookup/pylookup.db")
+(global-set-key "\C-ch" 'pylookup-lookup)
