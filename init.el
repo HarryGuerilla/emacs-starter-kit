@@ -419,6 +419,7 @@
 (setq yas/global-mode t)
 
 
+
 ;; ===================================================================
 ;; Autocomplete
 ;; ===================================================================
@@ -437,6 +438,9 @@
 (setq auto-mode-alist (append '(("/*.\.py$" . python-mode)) auto-mode-alist))
 (setq py-shell-name "/usr/bin/python3")
 
+; look up python documentation
+; to update the  pylookup db run:
+; ./pylookup.py -u file:///usr/share/doc/python/html
 (add-to-list 'load-path "~/.emacs.d/site-lisp/pylookup/") 
 (autoload 'pylookup-lookup "pylookup")
 (autoload 'pylookup-update "pylookup")
