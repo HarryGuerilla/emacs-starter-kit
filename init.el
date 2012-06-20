@@ -215,8 +215,8 @@
         (set (make-local-variable 'tab-width) 2)
         (imenu-add-to-menubar "IMENU")
 ;        (define-key ruby-mode-map "\C-m" 'newline-and-indent) ;Not sure if this line is 100% right!
-        (require 'ruby-electric)
-        (ruby-electric-mode t)
+;        (require 'ruby-electric)
+;        (ruby-electric-mode t)
         ))
 
 ;; as an alternative to Rinari you can use Rails-mode
@@ -447,3 +447,16 @@
 (setq pylookup-program "~/.emacs.d/site-lisp/pylookup/pylookup.py")
 (setq pylookup-db-file "~/.emacs.d/site-lisp/pylookup/pylookup.db")
 (global-set-key "\C-ch" 'pylookup-lookup)
+
+; autopair
+(autoload 'autopair-global-mode "autopair" nil t)
+(autopair-global-mode)
+(add-hook 'lisp-mode-hook
+          #'(lambda () (setq autopair-dont-activate t)))
+(add-hook 'python-mode-hook
+          #'(lambda ()
+              (push '(?' . ?')
+                    (getf autopair-extra-pairs :code))
+              (setq autopair-handle-action-fns
+                    (list #'autopair-default-handle-action
+                          #'autopair-python-triple-quote-action))))
