@@ -25,3 +25,6 @@
 [submodule "site-lisp/rhtml"]
 	path = site-lisp/rhtml
 	url = https://github.com/eschulte/rhtml.git
+[submodule "site-lisp/yasnippet-ruby-mode"]
+	path = site-lisp/yasnippet-ruby-mode
+	url = https://github.com/bmaland/yasnippet-ruby-mode.git
