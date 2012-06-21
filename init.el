@@ -408,19 +408,6 @@
 
 
 ;; ===================================================================
-;; YASnippet
-;; ===================================================================
-
-(add-to-list 'load-path "~/.emacs.d/site-lisp/yasnippet-0.6.1c")
-(require 'yasnippet) 
-(yas/initialize)
-(yas/load-directory "~/.emacs.d/site-lisp/yasnippet-0.6.1c/snippets")
-;;(setq yas/prompt-functions '(yas/dropdown-prompt))
-(setq yas/global-mode t)
-
-
-
-;; ===================================================================
 ;; Autocomplete
 ;; ===================================================================
 (add-to-list 'load-path "~/.emacs.d/site-lisp/auto-complete-1.3.1")
@@ -460,3 +447,22 @@
               (setq autopair-handle-action-fns
                     (list #'autopair-default-handle-action
                           #'autopair-python-triple-quote-action))))
+
+
+
+;; ===================================================================
+;; YASnippet
+;; ===================================================================
+
+;(add-to-list 'load-path "~/.emacs.d/site-lisp/yasnippet-0.6.1c")
+;(require 'yasnippet) 
+
+;;  Yasnippets in this directory are compiled to improve load speed
+;(yas/load-directory "~/.emacs.d/site-lisp/yasnippet-0.6.1c/snippets")
+;(setq yas/prompt-functions '(yas/dropdown-prompt))
+
+(require 'yas-custom) ;compiled from snippets directory
+(yas/initialize)
+(setq yas/global-mode t)
+
+
