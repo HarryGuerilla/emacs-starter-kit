@@ -5577,7 +5577,35 @@ This workaround avoid flyspell processes when auto completion is being started."
 ;;;;      Auto-generated code         ;;;;
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 (defun yas/initialize-bundle ()
-  "Initialize YASnippet and load snippets in the bundle.";;; snippets for ruby-mode
+  "Initialize YASnippet and load snippets in the bundle.";;; snippets for python-mode
+(yas/define-snippets 'python-mode
+                     '(("__" "__${init}__" "__...__" nil nil nil nil nil)
+                       ("class" "class ${1:ClassName}(${2:object}):\n    $0\n" "class" nil nil nil nil nil)
+                       ("class" "class ${1:ClassName}(${2:object}):\n\n    def __init__(self${3:, }$4):\n        super($1,self).__init__($4)\n        $0\n" "class" nil nil nil nil nil)
+                       ("coding" "# -*- coding: utf-8 -*-\n" "coding.utf8" nil nil nil nil nil)
+                       ("def" "def ${1:name}($2):\n    $0\n" "def" nil nil nil nil nil)
+                       ("defm" "def ${1:name}(self, $2):\n    $0\n" "defm" nil nil nil nil nil)
+                       ("doc" "\"\"\"$0\n\"\"\"\n" "doc" nil nil nil nil nil)
+                       ("for" "for ${var} in ${collection}:\n    $0" "for ... in ... : ..." nil nil nil nil nil)
+                       ("from" "from $1 import $2\n$0\n" "from ... import ..." nil nil nil nil nil)
+                       ("ifmain" "if __name__ == '__main__':\n    $0" "if __name__ == '__main__': ..." nil nil nil nil nil)
+                       ("init" "def __init__(self$1):\n    $0\n" "init" nil nil nil nil nil)
+                       ("ipdb" "import ipdb; ipdb.set_trace()" "ipdb" nil nil nil nil nil)
+                       ("param" ":param $1: $0" "param" "'force-in-comment" nil nil nil nil)
+                       ("pdb" "import pdb; pdb.set_trace()\n" "pdb" nil nil nil nil nil)
+                       ("prop" "@property\ndef ${1:prop}(self):\n    ${0:pass}\n\n@$1.setter\ndef $1(self, value):\n    pass\n" "decorator: @property def x: ... @x.setter" nil nil "((yas/indent-line 'fixed) (yas/wrap-around-region 'nil))" nil nil)
+                       ("prop" "def ${1:foo}():\n   doc = \"\"\"${2:Doc string}\"\"\"\n   def fget(self):\n       return self._$1\n   def fset(self, value):\n       self._$1 = value\n   def fdel(self):\n       del self._$1\n   return locals()\n$1 = property(**$1())\n\n$0\n" "prop" nil nil "((yas/indent-line 'fixed) (yas/wrap-around-region 'nil))" nil nil)
+                       ("testcase" "class ${1:TestCase}(${2:unittest.TestCase}):\n    $0\n" "unittest.TestCase normal" nil nil nil nil nil)
+                       ("testcase" "class $1${2:TestCase}(${3:unittest.TestCase}):\n\n    def setUp(self):\n        ${4:pass} \n	\n    def tearDown(self):\n        ${5:pass}\n\n    $0\n" "unittest.TestCase with setUp tearDown" nil nil nil nil nil)
+                       ("try" "try:\n	${1:pass}\nexcept ${2:Exception}, ${3:e}:\n	${4:raise $3}" "try.except" nil nil nil nil nil)
+                       ("try" "try:\n	${1:pass}\nexcept ${2:Exception}, ${3:e}:\n	${4:raise $3}\nelse:\n	${5:pass}" "try.exceptelse" nil nil nil nil nil)
+                       ("try" "try:\n	${1:pass}\nexcept ${2:Exception}, ${3:e}}:\n	${4:raise}\nelse:\n	${5:pass}\nfinally:\n	${6:pass}" "try.exceptelsefinally" nil nil nil nil nil)
+                       ("try" "try:\n	${1:pass}\nexcept ${2:Exception}, ${3:e}:\n	${4:raise $3}\nfinally:\n	${5:pass}" "try.exceptfinally" nil nil nil nil nil)
+                       ("while" "while ${condition}:\n    $0" "while ... : ..." nil nil nil nil nil))
+                     '(text-mode))
+
+
+;;; snippets for ruby-mode
 (yas/define-snippets 'ruby-mode
                      '(("!env" "#!/usr/bin/env ruby\n" "/usr/bin/env ruby" nil nil nil nil nil)
                        ("#" "# => " "# =>" nil nil nil nil nil)
