@@ -448,6 +448,8 @@
                     (list #'autopair-default-handle-action
                           #'autopair-python-triple-quote-action))))
 
+(require 'python-pep8)
+(require 'python-pylint)
 
 
 ;; ===================================================================
