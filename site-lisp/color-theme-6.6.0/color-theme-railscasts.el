@@ -60,10 +60,3 @@
                                         "black"))))
      (underline ((t (:underline t)))) 
      (minibuffer-prompt ((t (:bold t :foreground "#FF6600")))))))
-<<<<<<< HEAD:vendor/color-theme-railscasts/color-theme-railscasts.el
-
-
-
-(provide 'railscasts)
-=======
->>>>>>> linux-remaster:site-lisp/color-theme-6.6.0/color-theme-railscasts.el

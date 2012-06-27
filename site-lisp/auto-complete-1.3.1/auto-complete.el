@@ -5,11 +5,7 @@
 ;; Author: Tomohiro Matsuyama <m2ym.pub@gmail.com>
 ;; URL: http://cx4a.org/software/auto-complete
 ;; Keywords: completion, convenience
-<<<<<<< HEAD:vendor/auto-complete.el
-;; Version: 1.3
-=======
 ;; Version: 1.3.1
->>>>>>> linux-remaster:site-lisp/auto-complete-1.3.1/auto-complete.el
 
 ;; This program is free software; you can redistribute it and/or modify
 ;; it under the terms of the GNU General Public License as published by
