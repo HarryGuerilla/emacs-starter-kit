@@ -1,13 +1,10 @@
 loaddefs.el*
 backups/*
 auto-save-list
-custom.el
+custom.el*
 *elc
-places
 url/cookies
-elpa-to-submit/jabber/jabber.info
-elpa-to-submit/nxhtml/etc/schema/xhtml-loader.rnc
-thumbs/*
+nthumbs/*
 oddmuse/*
 .newsrc-dribble
 .nnmail-cache
@@ -16,6 +13,10 @@ oddmuse/*
 .DS_Store
 image-dired/
 elim/
-elpa-to-submit/nxhtml/etc/schema/xhtml-loader.rnc~
 tramp
 \#*
+places
+session.*
+eproject.lst
+.directory
+ac-comphist.dat

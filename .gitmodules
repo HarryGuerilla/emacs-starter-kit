@@ -7,3 +7,24 @@
 [submodule "vendor/org-6.30e"]
 	path = vendor/org-6.30e
 	url = git://repo.or.cz/org-mode.git
+[submodule "site-lisp/rinari"]
+	path = site-lisp/rinari
+	url = git://github.com/eschulte/rinari.git
+[submodule "site-lisp/rspec-mode"]
+	path = site-lisp/rspec-mode
+	url = https://github.com/pezra/rspec-mode.git
+[submodule "site-lisp/org-mode"]
+	path = site-lisp/org-mode
+	url = git://orgmode.org/org-mode.git
+[submodule "site-lisp/magit"]
+	path = site-lisp/magit
+	url = https://github.com/magit/magit.git
+[submodule "site-lisp/coffee-mode"]
+	path = site-lisp/coffee-mode
+	url = git://github.com/defunkt/coffee-mode.git
+[submodule "site-lisp/rhtml"]
+	path = site-lisp/rhtml
+	url = https://github.com/eschulte/rhtml.git
+[submodule "site-lisp/yasnippet-ruby-mode"]
+	path = site-lisp/yasnippet-ruby-mode
+	url = https://github.com/bmaland/yasnippet-ruby-mode.git
