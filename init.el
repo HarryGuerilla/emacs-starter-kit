@@ -451,6 +451,9 @@
 (require 'python-pep8)
 (require 'python-pylint)
 
+; remove trailing new lines and whitespace
+(add-hook 'before-save-hook 'delete-trailing-whitespace)
+
 
 ;; ===================================================================
 ;; YASnippet
