@@ -32,7 +32,7 @@
 (setq indicate-empty-lines 1)
 
 ;; show clock in status bar
-(display-time)        
+(display-time)
 
 ;; startup screen
 (setq inhibit-startup-screen t)
@@ -61,7 +61,7 @@
 (load-file "~/.emacs.d/site-lisp/color-theme-6.6.0/color-theme-tomorrow.el")
 (load-file "~/.emacs.d/site-lisp/color-theme-6.6.0/tomorrow-night-theme.el")
 (load-file "~/.emacs.d/site-lisp/color-theme-6.6.0/tomorrow-night-bright-theme.el")
-(add-to-list 'color-themes 
+(add-to-list 'color-themes
   '(color-theme-tangotango "Tango Tango" "http://blog.nozav.org/post/2010/07/12/Updated-tangotango-emacs-color-theme")
 )
 (add-to-list 'color-themes '(color-theme-vibrant-ink "Vibrant Ink" "<http://github.com/mig/color-theme-vibrant-ink"))
@@ -281,7 +281,7 @@
 (load-file "~/.emacs.d/site-lisp/cedet-1.1/common/cedet.el")
 ;;(load-file (expand-file-name "~/.emacs.d/site-lisp/cedet-1.0/common/cedet.el"))
 (global-ede-mode 1)                      ; Enable the Project management system
-(semantic-load-enable-code-helpers)      ; Enable prototype help and smart completion 
+(semantic-load-enable-code-helpers)      ; Enable prototype help and smart completion
 (global-srecode-minor-mode 1)            ; Enable template insertion menu
 
 
@@ -317,7 +317,7 @@
 ;; problem occurs.
 (setq debug-on-error t)
 
-;; If you want Emacs to defer loading the JDE until you open a 
+;; If you want Emacs to defer loading the JDE until you open a
 ;; Java file, edit the following line
 ;; (setq defer-loading-jde nil)
 ;; to read:
@@ -357,7 +357,7 @@
 (setq jde-jdk-registry
       (quote (("1.6.0_24" . "/System/Library/Frameworks/JavaVM.framework/Versions/CurrentJDK/")))
 )
-(setq jde-jdk 
+(setq jde-jdk
       (quote ("1.6.0_24")))
 
 (require 'flymake)
@@ -420,7 +420,7 @@
 ;; Python
 ;; ===================================================================
 
-(add-to-list 'load-path "~/.emacs.d/site-lisp/python-mode.el-6.0.8/") 
+(add-to-list 'load-path "~/.emacs.d/site-lisp/python-mode.el-6.0.8/")
 (autoload 'python-mode "python-mode.el" "Python mode." t)
 (setq auto-mode-alist (append '(("/*.\.py$" . python-mode)) auto-mode-alist))
 (setq py-shell-name "/usr/bin/python3")
@@ -428,7 +428,7 @@
 ; look up python documentation
 ; to update the  pylookup db run:
 ; ./pylookup.py -u file:///usr/share/doc/python/html
-(add-to-list 'load-path "~/.emacs.d/site-lisp/pylookup/") 
+(add-to-list 'load-path "~/.emacs.d/site-lisp/pylookup/")
 (autoload 'pylookup-lookup "pylookup")
 (autoload 'pylookup-update "pylookup")
 (setq pylookup-program "~/.emacs.d/site-lisp/pylookup/pylookup.py")
@@ -460,7 +460,7 @@
 ;; ===================================================================
 
 ;(add-to-list 'load-path "~/.emacs.d/site-lisp/yasnippet-0.6.1c")
-;(require 'yasnippet) 
+;(require 'yasnippet)
 
 ;;  Yasnippets in this directory are compiled to improve load speed
 ;(yas/load-directory "~/.emacs.d/site-lisp/yasnippet-0.6.1c/snippets")
@@ -471,3 +471,14 @@
 (setq yas/global-mode t)
 
 
+;; ===================================================================
+;; Javascript
+;; ===================================================================
+
+(autoload 'js2-mode "js2-mode" nil t)
+(add-to-list 'auto-mode-alist '("\\.js$" . js2-mode))
+
+(eval-after-load 'js2-mode
+  '(progn
+     (require 'js2-imenu-extras)
+     (js2-imenu-extras-setup)))
