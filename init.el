@@ -389,7 +389,7 @@
 (setq org-mobile-inbox-for-pull "~/Dropbox/Org/inbox.org")
 ;; Set to <your Dropbox root directory>/MobileOrg.
 (setq org-mobile-directory "~/Dropbox/MobileOrg")
-(setq org-agenda-files (quote ("~/Dropbox/Org/fancyhair.org" "~/Dropbox/Org/Personal.org" "~/Dropbox/Org/ilearnthings.org")))
+(setq org-agenda-files (quote ("~/Dropbox/Org")))
 
 
 
