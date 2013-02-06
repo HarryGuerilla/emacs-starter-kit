@@ -209,7 +209,7 @@
                   '(lambda()
                      (save-excursion
                        (untabify (point-min) (point-max))
-                       (delete-trailing-whitespace)
+;                       (delete-trailing-whitespace)
                        )))
         (set (make-local-variable 'indent-tabs-mode) 'nil)
         (set (make-local-variable 'tab-width) 2)
@@ -389,7 +389,8 @@
 (setq org-mobile-inbox-for-pull "~/Dropbox/Org/inbox.org")
 ;; Set to <your Dropbox root directory>/MobileOrg.
 (setq org-mobile-directory "~/Dropbox/MobileOrg")
-(setq org-agenda-files (quote ("~/Dropbox/Org/fancyhair.org" "~/Dropbox/Org/Personal.org" "~/Dropbox/Org/ilearnthings.org")))
+;;(setq org-agenda-files (quote ("~/Dropbox/Org/fancyhair.org" "~/Dropbox/Org/Personal.org" "~/Dropbox/Org/ilearnthings.org")))
+(setq org-agenda-files (quote ("~/Dropbox/Org/")))
 
 
 
@@ -423,7 +424,8 @@
 (add-to-list 'load-path "~/.emacs.d/site-lisp/python-mode.el-6.0.8/")
 (autoload 'python-mode "python-mode.el" "Python mode." t)
 (setq auto-mode-alist (append '(("/*.\.py$" . python-mode)) auto-mode-alist))
-(setq py-shell-name "/usr/bin/python3")
+;;(setq py-shell-name "/usr/bin/python3")
+(setq py-shell-name "/usr/bin/python")
 
 ; look up python documentation
 ; to update the  pylookup db run:
@@ -452,7 +454,7 @@
 (require 'python-pylint)
 
 ; remove trailing new lines and whitespace
-(add-hook 'before-save-hook 'delete-trailing-whitespace)
+;(add-hook 'before-save-hook 'delete-trailing-whitespace)
 
 
 ;; ===================================================================
@@ -493,3 +495,21 @@
 (add-hook 'haskell-mode-hook 'turn-on-haskell-indentation)
 ;;(add-hook 'haskell-mode-hook 'turn-on-haskell-indent)
 ;;(add-hook 'haskell-mode-hook 'turn-on-haskell-simple-indent)
+
+;; ===================================================================
+;; Lua
+;; ===================================================================
+
+(autoload 'lua-mode "lua-mode" "Lua editing mode." t)
+(add-to-list 'auto-mode-alist '("\\.lua$" . lua-mode))
+(add-to-list 'interpreter-mode-alist '("lua" . lua-mode))
+
+
+;; ===================================================================
+;; Markdown
+;; ===================================================================
+
+(load "~/.emacs.d/site-lisp/markdown-mode/markdown-mode")
+;; (autoload 'markdown-mode "markdown-mode"
+;;    "Major mode for editing Markdown files" t)
+(add-to-list 'auto-mode-alist '("\\.md\\'" . markdown-mode))
