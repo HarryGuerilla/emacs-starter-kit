@@ -87,7 +87,7 @@
 ;;(setq default-frame-alist '((font . "inconsolata-11")))
 ;;(push '(font-backend xft x) default-frame-alist)
 ;;(setq font-lock-maximum-decoration t)
-(set-face-attribute 'default nil :height 80)
+(set-face-attribute 'default nil :height 100)
 
 ;; Color for terminal
 (autoload 'ansi-color-for-comint-mode-on "ansi-color" nil t)
