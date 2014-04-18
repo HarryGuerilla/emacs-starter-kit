@@ -28,3 +28,6 @@
 [submodule "site-lisp/yasnippet-ruby-mode"]
 	path = site-lisp/yasnippet-ruby-mode
 	url = https://github.com/bmaland/yasnippet-ruby-mode.git
+[submodule "site-lisp/haskell-mode"]
+	path = site-lisp/haskell-mode
+	url = https://github.com/haskell/haskell-mode.git

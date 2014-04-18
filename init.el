@@ -385,7 +385,7 @@
 (setq org-mobile-inbox-for-pull "~/Dropbox/Org/inbox.org")
 ;; Set to <your Dropbox root directory>/MobileOrg.
 (setq org-mobile-directory "~/Dropbox/MobileOrg")
-(setq org-agenda-files (quote ("~/Dropbox/Org/fancyhair.org" "~/Dropbox/Org/Personal.org" "~/Dropbox/Org/ilearnthings.org")))
+(setq org-agenda-files (quote ("~/Dropbox/Org")))
 
 
 
@@ -478,3 +478,14 @@
   '(progn
      (require 'js2-imenu-extras)
      (js2-imenu-extras-setup)))
+
+
+;; ===================================================================
+;; Haskell
+;; ===================================================================
+
+(load "~/.emacs.d/site-lisp/haskell-mode/haskell-site-file")
+(add-hook 'haskell-mode-hook 'turn-on-haskell-doc-mode)
+(add-hook 'haskell-mode-hook 'turn-on-haskell-indentation)
+;;(add-hook 'haskell-mode-hook 'turn-on-haskell-indent)
+;;(add-hook 'haskell-mode-hook 'turn-on-haskell-simple-indent)
