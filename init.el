@@ -42,6 +42,7 @@
 ;; menu's & scroll bars
 (scroll-bar-mode -1)
 (tool-bar-mode -1)
+(menu-bar-mode -1)
 
 (show-paren-mode t) ; highlight matching paren
 (setq show-paren-style 'mixed)
@@ -87,7 +88,7 @@
 ;;(setq default-frame-alist '((font . "inconsolata-11")))
 ;;(push '(font-backend xft x) default-frame-alist)
 ;;(setq font-lock-maximum-decoration t)
-(set-face-attribute 'default nil :height 80)
+(set-face-attribute 'default nil :height 90)
 
 ;; Color for terminal
 (autoload 'ansi-color-for-comint-mode-on "ansi-color" nil t)
@@ -132,11 +133,6 @@
 (setq major-mode 'text-mode)
 (global-set-key (kbd "C-x C-b") 'ibuffer) ; replace BufferMenu with ibuffer
     (autoload 'ibuffer "ibuffer" "List buffers." t)
-
-;; SET SYSTEM FONTS FOR TERMINAL
-(set-terminal-coding-system 'utf-8)
-(set-keyboard-coding-system 'utf-8)
-(prefer-coding-system 'utf-8)
 
 ;; make emacs use the clipboard
 (setq x-select-enable-clipboard t)
