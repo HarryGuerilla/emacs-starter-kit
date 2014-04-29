@@ -395,6 +395,8 @@
 (setq org-mobile-directory "~/Dropbox/MobileOrg")
 (setq org-agenda-files (quote ("~/Dropbox/Org")))
 
+(add-hook 'org-mode-hook 'nolinum)
+
 
 
 ;; ===================================================================
