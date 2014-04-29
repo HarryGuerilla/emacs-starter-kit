@@ -27,6 +27,9 @@
 ;; show line numbers in buffer
 (setq line-number-mode t)
 (global-linum-mode 1)
+(defun nolinum ()
+  (global-linum-mode 0)
+)
 
 ;; show fringe indicator for empty lines
 (setq indicate-empty-lines 1)
@@ -88,7 +91,7 @@
 ;;(setq default-frame-alist '((font . "inconsolata-11")))
 ;;(push '(font-backend xft x) default-frame-alist)
 ;;(setq font-lock-maximum-decoration t)
-(set-face-attribute 'default nil :height 90)
+(set-face-attribute 'default nil :height 110)
 
 ;; Color for terminal
 (autoload 'ansi-color-for-comint-mode-on "ansi-color" nil t)
@@ -159,6 +162,11 @@
 
 ;; Copy and Paste
 (setq x-select-enable-clipboard t)
+
+;; encryption
+(require 'epa-file)
+(epa-file-enable)
+(setenv "GPG_AGENT_INFO" nil)
 
 
 
@@ -489,3 +497,14 @@
 (add-hook 'haskell-mode-hook 'turn-on-haskell-indentation)
 ;;(add-hook 'haskell-mode-hook 'turn-on-haskell-indent)
 ;;(add-hook 'haskell-mode-hook 'turn-on-haskell-simple-indent)
+
+
+;; ===================================================================
+;; Ledger
+;; ===================================================================
+
+(add-to-list 'load-path
+              (expand-file-name "~/.emacs.d/site-lisp/ledger/"))
+(load "ledger-mode")
+(add-to-list 'auto-mode-alist '("\\.ledger$" . ledger-mode))
+(add-hook 'ledger-mode-hook 'nolinum)
