@@ -91,7 +91,11 @@
 ;;(setq default-frame-alist '((font . "inconsolata-11")))
 ;;(push '(font-backend xft x) default-frame-alist)
 ;;(setq font-lock-maximum-decoration t)
-(set-face-attribute 'default nil :height 110)
+
+;; Make font smaller when using netbook
+(if (string= system-name "caelum")
+  (set-face-attribute 'default nil :height 90)
+  (set-face-attribute 'default nil :height 110))
 
 ;; Color for terminal
 (autoload 'ansi-color-for-comint-mode-on "ansi-color" nil t)
