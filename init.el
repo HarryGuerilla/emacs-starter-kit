@@ -27,6 +27,9 @@
 ;; show line numbers in buffer
 (setq line-number-mode t)
 (global-linum-mode 1)
+(defun nolinum ()
+  (global-linum-mode 0)
+)
 
 ;; show fringe indicator for empty lines
 (setq indicate-empty-lines 1)
@@ -42,6 +45,7 @@
 ;; menu's & scroll bars
 (scroll-bar-mode -1)
 (tool-bar-mode -1)
+(menu-bar-mode -1)
 
 (show-paren-mode t) ; highlight matching paren
 (setq show-paren-style 'mixed)
@@ -87,7 +91,7 @@
 ;;(setq default-frame-alist '((font . "inconsolata-11")))
 ;;(push '(font-backend xft x) default-frame-alist)
 ;;(setq font-lock-maximum-decoration t)
-(set-face-attribute 'default nil :height 80)
+(set-face-attribute 'default nil :height 110)
 
 ;; Color for terminal
 (autoload 'ansi-color-for-comint-mode-on "ansi-color" nil t)
@@ -133,11 +137,6 @@
 (global-set-key (kbd "C-x C-b") 'ibuffer) ; replace BufferMenu with ibuffer
     (autoload 'ibuffer "ibuffer" "List buffers." t)
 
-;; SET SYSTEM FONTS FOR TERMINAL
-(set-terminal-coding-system 'utf-8)
-(set-keyboard-coding-system 'utf-8)
-(prefer-coding-system 'utf-8)
-
 ;; make emacs use the clipboard
 (setq x-select-enable-clipboard t)
 (setq interprogram-paste-function 'x-cut-buffer-or-selection-value)
@@ -163,6 +162,11 @@
 
 ;; Copy and Paste
 (setq x-select-enable-clipboard t)
+
+;; encryption
+(require 'epa-file)
+(epa-file-enable)
+(setenv "GPG_AGENT_INFO" nil)
 
 
 
@@ -391,6 +395,8 @@
 (setq org-mobile-directory "~/Dropbox/MobileOrg")
 (setq org-agenda-files (quote ("~/Dropbox/Org")))
 
+(add-hook 'org-mode-hook 'nolinum)
+
 
 
 ;; ===================================================================
@@ -493,3 +499,14 @@
 (add-hook 'haskell-mode-hook 'turn-on-haskell-indentation)
 ;;(add-hook 'haskell-mode-hook 'turn-on-haskell-indent)
 ;;(add-hook 'haskell-mode-hook 'turn-on-haskell-simple-indent)
+
+
+;; ===================================================================
+;; Ledger
+;; ===================================================================
+
+(add-to-list 'load-path
+              (expand-file-name "~/.emacs.d/site-lisp/ledger/"))
+(load "ledger-mode")
+(add-to-list 'auto-mode-alist '("\\.ledger$" . ledger-mode))
+(add-hook 'ledger-mode-hook 'nolinum)
