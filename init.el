@@ -124,7 +124,7 @@
 (setq query-replace-highlight t)
 (setq require-final-newline t)
 (setq-default indent-tabs-mode nil)
-(setq-default tab-width 2)
+(setq default-tab-width 2)
 (server-start) ; allow access from emacs client
 ; saving desktop could prevent the daemon from starting due to conflicting pid
 ;;(desktop-save-mode t) ; restore desktop on restart
@@ -488,6 +488,7 @@
   '(progn
      (require 'js2-imenu-extras)
      (js2-imenu-extras-setup)))
+(setq js-indent-level 2)
 
 
 ;; ===================================================================
