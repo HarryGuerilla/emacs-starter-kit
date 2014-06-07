@@ -34,3 +34,6 @@
 [submodule "site-lisp/markdown-mode"]
 	path = site-lisp/markdown-mode
 	url = git://jblevins.org/git/markdown-mode.git
+[submodule "site-lisp/jade-mode"]
+	path = site-lisp/jade-mode
+	url = https://github.com/brianc/jade-mode.git
