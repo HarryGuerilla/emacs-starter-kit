@@ -20,4 +20,5 @@ session.*
 eproject.lst
 .directory
 ac-comphist.dat
+.#*
 .org-id-locations
