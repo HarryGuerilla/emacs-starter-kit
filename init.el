@@ -172,6 +172,7 @@
 (epa-file-enable)
 (setenv "GPG_AGENT_INFO" nil)
 
+(setq epg-gpg-home-directory "~/.gnupg")
 
 
 ;; ===================================================================
